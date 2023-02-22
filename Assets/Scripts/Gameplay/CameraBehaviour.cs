@@ -8,7 +8,6 @@ public class CameraBehaviour : MonoBehaviour
 
     private Vector2 angle = new Vector2(90 * Mathf.Deg2Rad, 0);
     private Camera cam;
-
     private Vector2 nearPlaneSize;
 
     private void Awake()
