@@ -1,0 +1,574 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e251860fcd970734c9f14ebd98a146c3, type: 3}
+  m_Name: GS-20230213 - 223819
+  m_EditorClassIdentifier: 
+  m_name: Session 20230213-223819
+  m_description: 'Rocking out at Creativity Central!
+
+
+    If you like Gaia please
+    consider rating it :)'
+  m_previewImage: {fileID: 0}
+  m_dateCreated: 13/02/2023 22:38:19
+  m_terrainWidth: 1024
+  m_terrainDepth: 1024
+  m_terrainHeight: 1024
+  m_seaLevel: 20
+  m_spawnDensity: 0.1
+  m_isLocked: 0
+  m_previewImageBytes: 
+  m_previewImageWidth: 0
+  m_previewImageHeight: 0
+  m_operations:
+  - m_description: Clear World
+    m_operationType: 10
+    m_isActive: 1
+    m_affectedTerrainNames: []
+    m_operationDateTime: 13/02/2023 22:40:10
+    scriptableObjectAssetGUID: 
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: 'Creating World: 5 x 5 tiles, tile size: 1024'
+    m_operationType: 0
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_4_4-20230213 - 224010
+    m_operationDateTime: 13/02/2023 22:40:10
+    scriptableObjectAssetGUID: a2699968490235d4ea065417b50ee5d7
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Multiple Spawners (10)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_0_0-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_4_4-20230213 - 224010
+    m_operationDateTime: 13/02/2023 22:45:07
+    scriptableObjectAssetGUID: adac87074c18a3f4085338c872aa68f1
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Multiple Spawners (10)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    m_operationDateTime: 13/02/2023 23:05:10
+    scriptableObjectAssetGUID: f81b075eb12ac804da1d761149a8826b
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Clearing - Trees Details GOs, AllTerrains, OnlyThisSpawner
+    m_operationType: 3
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    m_operationDateTime: 13/02/2023 23:08:05
+    scriptableObjectAssetGUID: d24fa884a0e6bf34986f12fd182605e7
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Clearing - Trees Details GOs SpawnExt Probes, AllTerrains, AnySource
+    m_operationType: 3
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    m_operationDateTime: 13/02/2023 23:09:35
+    scriptableObjectAssetGUID: d7078aec73876974da635b072d75fd8e
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Multiple Spawners (9)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    m_operationDateTime: 13/02/2023 23:11:06
+    scriptableObjectAssetGUID: efca701492296c1418ef1756b4e59b10
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Multiple Spawners (8)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    m_operationDateTime: 13/02/2023 23:30:05
+    scriptableObjectAssetGUID: b6c505097a4641541ae374d86bace089
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - GaiaPro-Village(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    m_operationDateTime: 13/02/2023 23:36:05
+    scriptableObjectAssetGUID: 6ed8fcfdf29db4e4a85c821f46d13072
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Spawning - Alpine Meadow-Trees(Clone)
+    m_operationType: 7
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    m_operationDateTime: 14/02/2023 8:45:03
+    scriptableObjectAssetGUID: 3ffc51456b84180419ea2a8a00b4205d
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Clearing -, AllTerrains, AnySource
+    m_operationType: 3
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    m_operationDateTime: 14/02/2023 8:54:32
+    scriptableObjectAssetGUID: ed373ca1dfa2b87459f7a216b7856c63
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  - m_description: Clearing - Trees Details GOs SpawnExt Probes, AllTerrains, AnySource
+    m_operationType: 3
+    m_isActive: 1
+    m_affectedTerrainNames:
+    - Terrain_2_0-20230213 - 224010
+    - Terrain_0_4-20230213 - 224010
+    - Terrain_2_4-20230213 - 224010
+    - Terrain_4_3-20230213 - 224010
+    - Terrain_2_2-20230213 - 224010
+    - Terrain_0_2-20230213 - 224010
+    - Terrain_1_1-20230213 - 224010
+    - Terrain_3_1-20230213 - 224010
+    - Terrain_0_1-20230213 - 224010
+    - Terrain_3_4-20230213 - 224010
+    - Terrain_4_2-20230213 - 224010
+    - Terrain_0_3-20230213 - 224010
+    - Terrain_1_0-20230213 - 224010
+    - Terrain_1_4-20230213 - 224010
+    - Terrain_4_4-20230213 - 224010
+    - Terrain_4_0-20230213 - 224010
+    - Terrain_3_0-20230213 - 224010
+    - Terrain_3_3-20230213 - 224010
+    - Terrain_0_0-20230213 - 224010
+    - Terrain_3_2-20230213 - 224010
+    - Terrain_1_2-20230213 - 224010
+    - Terrain_2_1-20230213 - 224010
+    - Terrain_1_3-20230213 - 224010
+    - Terrain_2_3-20230213 - 224010
+    - Terrain_4_1-20230213 - 224010
+    m_operationDateTime: 14/02/2023 8:55:27
+    scriptableObjectAssetGUID: b785b0e7962baa04891795f756875a57
+    m_isFoldedOut: 0
+    sessionPlaybackState: 1
+    m_terrainsFoldedOut: 0
+    m_serializedExternalAction: 
+  m_terrainMinMaxCache:
+  - guid: b068bc6c7812f364dae566e8d5ed853b
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 56.438362
+  - guid: 2c13528da1a5603488991bed5a39c6b5
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 147.50226
+  - guid: 1c67e97bd0ed99146b852c342ec62c85
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 143.5022
+  - guid: 1f3f1ece7e2017042b9655b04b08ef86
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 83.501274
+  - guid: 6cc4a5ba65d1d5c4fae64f3a5e8ffcd0
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 66.438515
+  - guid: 2e86a4e94894fcd45a3b14386c7a7c48
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 122.78313
+  - guid: 7bbd4cb0a47f554448b2d59ada10ad08
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 225.5347
+  - guid: c6a76be94627fb14b9ddbf218c0e315e
+    isWorldmap: 0
+    recalculate: 0
+    min: 10.50016
+    max: 200.59682
+  - guid: 04ae374c2b9ca6b47b65110376603763
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 103.37658
+  - guid: 6b2e50a6b4af7cb4492783891a2bc04b
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 70.18857
+  - guid: 78c42365f5331eb478ab75435ca395bf
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 236.65987
+  - guid: a67845d180627514eb63000078a3bc62
+    isWorldmap: 0
+    recalculate: 0
+    min: 8.062623
+    max: 291.4732
+  - guid: 00da7c9b7a018304b9d437cfca123f4c
+    isWorldmap: 0
+    recalculate: 0
+    min: 16.31275
+    max: 223.94092
+  - guid: 2d9676288263a344493d78083cdf913d
+    isWorldmap: 0
+    recalculate: 0
+    min: 32.531746
+    max: 231.78479
+  - guid: 76179f02bcc45654180770dabd064268
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 232.25354
+  - guid: 1cf889e415ce6f44c996f4f7fd864f96
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 83.688774
+  - guid: 2d32bb8870c24d3428975ca15bf2dca2
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 198.47177
+  - guid: bcbe3dbfe6c2f37489bf9c2265034fde
+    isWorldmap: 0
+    recalculate: 0
+    min: 8.437629
+    max: 193.25294
+  - guid: dbd62b60f7660ef4eaa87da7f315d77c
+    isWorldmap: 0
+    recalculate: 0
+    min: 7.281361
+    max: 228.06598
+  - guid: 6225f7b042ec54f45aa6cace8e2a5e35
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 91.15764
+  - guid: 644907a7060c3ad42bc92e1954b3fc81
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 45.594444
+  - guid: 9a6c8b8ae97ba2240a2a95ef7c7fae72
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 94.59519
+  - guid: 799e83c1d4802dd409e963eb9a5fbd40
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 196.84676
+  - guid: 1c8231857c9fc704bb24248c4aa7d8f9
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 172.40887
+  - guid: 4699588e57f270949a0f35d18cc938f5
+    isWorldmap: 0
+    recalculate: 0
+    min: 0
+    max: 41.594383
+  - guid: Worldmap
+    isWorldmap: 1
+    recalculate: 0
+    min: 0
+    max: 0
+  m_bakedMaskCacheEntries:
+  - fileName: Terrain_4_4-20230213 - 224010_LayerGameObject_3584_2
+    assetPath: Assets/ThirdParty/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_4_4-20230213
+      - 224010/Terrain_4_4-20230213 - 224010_LayerGameObject_3584_2
+    fullPath: D:/Documentos A/Unity/RPG_Project/RPG_Project/Assets/ThirdParty/Procedural
+      Worlds/Gaia/TerrainCollisionData/Terrain_4_4-20230213 - 224010/Terrain_4_4-20230213
+      - 224010_LayerGameObject_3584_2
+    texture: {fileID: 0}
+  - fileName: Terrain_4_4-20230213 - 224010_LayerTree_3584_-0,2
+    assetPath: Assets/ThirdParty/Procedural Worlds/Gaia/TerrainCollisionData/Terrain_4_4-20230213
+      - 224010/Terrain_4_4-20230213 - 224010_LayerTree_3584_-0,2
+    fullPath: D:/Documentos A/Unity/RPG_Project/RPG_Project/Assets/ThirdParty/Procedural
+      Worlds/Gaia/TerrainCollisionData/Terrain_4_4-20230213 - 224010/Terrain_4_4-20230213
+      - 224010_LayerTree_3584_-0,2
+    texture: {fileID: 0}
+  m_worldBiomeMaskSettings: {fileID: 0}
