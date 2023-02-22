@@ -1,0 +1,6 @@
+{
+    "OtrhograpicSize": 512,
+    "PositionX": -0.4580235481262207,
+    "PositionY": 28.81999969482422,
+    "PositionZ": -73.6893310546875
+}

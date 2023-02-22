@@ -1,0 +1,56 @@
+{
+    "ShorelineWaves": [
+        {
+            "ID": 0,
+            "PositionX": -3.4251365661621095,
+            "PositionZ": -47.1688117980957,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.0,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 1,
+            "PositionX": -8.535100936889649,
+            "PositionZ": -36.62116241455078,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.21470072865486146,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 2,
+            "PositionX": -9.465130805969239,
+            "PositionZ": -21.775564193725587,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.4028424024581909,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 3,
+            "PositionX": -3.9427614212036135,
+            "PositionZ": -11.794090270996094,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.606708288192749,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        }
+    ]
+}

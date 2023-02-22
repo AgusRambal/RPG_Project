@@ -1,0 +1,1 @@
+{"AreaSize":231,"TextureSize":1024}

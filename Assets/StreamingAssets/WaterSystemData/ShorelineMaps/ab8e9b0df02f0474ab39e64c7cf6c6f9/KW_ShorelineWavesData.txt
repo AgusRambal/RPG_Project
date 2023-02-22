@@ -1,0 +1,30 @@
+{
+    "ShorelineWaves": [
+        {
+            "ID": 0,
+            "PositionX": -4.555042743682861,
+            "PositionZ": -59.97431564331055,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.0,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 1,
+            "PositionX": -3.4438962936401369,
+            "PositionZ": -50.78286361694336,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.21449463069438935,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        }
+    ]
+}

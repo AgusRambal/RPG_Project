@@ -1,0 +1,108 @@
+{
+    "ShorelineWaves": [
+        {
+            "ID": 0,
+            "PositionX": -16.716299057006837,
+            "PositionZ": -66.30433654785156,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.0,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 1,
+            "PositionX": -16.778297424316408,
+            "PositionZ": -51.9604377746582,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.1725577712059021,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 2,
+            "PositionX": -18.668537139892579,
+            "PositionZ": -39.130741119384769,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.3695719540119171,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 3,
+            "PositionX": -14.629705429077149,
+            "PositionZ": -30.375228881835939,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.5413715839385986,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 4,
+            "PositionX": -11.160595893859864,
+            "PositionZ": -18.290191650390626,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.6914883852005005,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 5,
+            "PositionX": -8.178389549255371,
+            "PositionZ": -1.8372344970703126,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.8363136053085327,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 6,
+            "PositionX": -11.628124237060547,
+            "PositionZ": 17.822669982910158,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.0021958351135253908,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        },
+        {
+            "ID": 7,
+            "PositionX": -8.89498233795166,
+            "PositionZ": 41.73345947265625,
+            "EulerRotation": 0.0,
+            "ScaleX": 14.0,
+            "ScaleY": 4.5,
+            "ScaleZ": 16.0,
+            "TimeOffset": 0.20910733938217164,
+            "DefaultScaleX": 14.0,
+            "DefaultScaleY": 4.5,
+            "DefaultScaleZ": 16.0
+        }
+    ]
+}
