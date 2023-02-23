@@ -1,125 +1,125 @@
-using UnityEngine;
 using Pathfinding;
+using UnityEngine;
+using RPG.Movement;
+using RPG.Combat;
 
-public class PlayerController : MonoBehaviour
+namespace RPG.Control
 {
-    [Header("PlayerComponents")]
-    [SerializeField] private RichAI agent;
-    public Animator animator;
-
-    [Header("Dependences")]  
-    public Camera cam;
-
-    [Header("Other")]
-    [SerializeField] private LayerMask FloorLayer;
-
-    [HideInInspector] public bool isAttacking;
-    private AttackScript attack;
-    private bool initialIddle;
-    private bool moving;
-
-    private void Awake()
+    public class PlayerController : MonoBehaviour
     {
-        attack = GetComponent<AttackScript>();
-    }
+        [Header("PlayerComponents")]
+        [SerializeField] private RichAI agent;
+        public Animator animator;
 
-    private void Start()
-    {
-        initialIddle = true;
-    }
+        [Header("Dependences")]
+        public Camera cam;
 
-    void FixedUpdate()
-    {
-        if (attack.Combat()) 
-            return;
+        //[HideInInspector] public bool isAttacking;
+        //private AttackScript attack;
+        private bool initialIddle;
+        private bool moving;
 
-        PlayerMovement();
-        PlayerRotation();
-    }
-
-    //Movement actions
-    public void PlayerMovement()
-    {
-        Movement();
-
-        if (initialIddle)
-            return;
-
-        if (!isAttacking)
+        private void Start()
         {
+            initialIddle = true;
+        }
+
+        private void Update()
+        {
+            if (InteractWithCombat())
+                return;
+
+            if (InteractWithMovement())
+                return;
+        }
+
+        private bool InteractWithCombat()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+
+            foreach (RaycastHit hit in hits)
+            {
+                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
+
+                if (target == null)
+                    continue;
+
+                //if (!CanAttack(target))
+                 //   continue;
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    GetComponent<Fighter>().Attack(target);
+                    //controller.animator.SetBool("isWalking", true);
+                    //enemyTarget = target;
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool InteractWithMovement()
+        {
+            PlayerRotation();
+            MovementActions();
+
+            bool hasHit = Physics.Raycast(GetMouseRay(), out RaycastHit hit);
+
+            if (hasHit)
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    GetComponent<Mover>().StartMoveAction(hit.point);
+                    initialIddle = false;
+                }
+                return true;
+            }
+
+            return false;
+        }
+
+        private void MovementActions()
+        {
+            if (initialIddle)
+                return;
+
+            //if (!isAttacking)
+            // {
             if (transform.hasChanged)
             {
                 animator.SetBool("isWalking", true);
                 moving = true;
             }
-        }     
+            // }     
 
-        if (agent.reachedEndOfPath)
-        {
-            animator.SetBool("isWalking", false);
-
-            moving = false;
-        }
-    }
-
-    public void Movement()
-    { 
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, FloorLayer))
+            if (agent.reachedEndOfPath)
             {
-                isAttacking = false;
-                StartMoveAction(hit.point);
-                initialIddle = false;
+                animator.SetBool("isWalking", false);
+
+                moving = false;
             }
         }
-    }
 
-    public void StartMoveAction(Vector3 destination)
-    {
-        attack.CancelCombat();
-        Move(destination);
-    }
+        //Player facing the mouse when not moving
+        private void PlayerRotation()
+        {
+            if (moving)
+                return;
 
-    //Set target
-    public void Move(Vector3 target)
-    {
-        agent.isStopped = false;
-        agent.destination = target;      
-    }
+            Vector3 positionOnScreen = cam.WorldToViewportPoint(transform.position);
+            Vector3 mouseOnScreen = (Vector2)cam.ScreenToViewportPoint(Input.mousePosition);
 
-    //Stop movement
-    public void Stop()
-    {
-        animator.SetBool("isWalking", false);
-        moving = false;
-        agent.isStopped = true;
-    }
+            Vector3 direction = mouseOnScreen - positionOnScreen;
 
-    //Stop movement without the mouse control
-    public void StopV2()
-    {
-        animator.SetBool("isWalking", false);
-        agent.isStopped = true;
-    }
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;
+            transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
+        }
 
-    public void SetMoving(bool state)
-    {
-        moving = state;
-    }
-
-    //Player facing the mouse when not moving
-    public void PlayerRotation()
-    {
-        if (moving)
-            return;
-
-        Vector3 positionOnScreen = cam.WorldToViewportPoint(transform.position);
-        Vector3 mouseOnScreen = (Vector2)cam.ScreenToViewportPoint(Input.mousePosition);
-
-        Vector3 direction = mouseOnScreen - positionOnScreen;
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;
-        transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
+        private static Ray GetMouseRay()
+        {
+            return Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
     }
 }
