@@ -1,27 +1,38 @@
 using UnityEngine;
 
-public class AIController : MonoBehaviour
+namespace RPG.Combat
 {
-    [SerializeField] private float chaseDistance = 5f;
-
-    private Health player;
-
-    private void Start()
+    public class AIController : MonoBehaviour
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Health>();
-    }
+        [SerializeField] private float chaseDistance = 5f;
 
-    private void Update()
-    {
-        if (DistanceToPlayer())
+        private Fighter fighter;
+        private GameObject player;
+
+        private void Start()
         {
-            Debug.Log("Chase");
+            fighter = GetComponent<Fighter>();
+            player = GameObject.FindWithTag("Player");
         }
-    }
 
-    private bool DistanceToPlayer()
-    {
-        float distance = Vector3.Distance(player.transform.position, transform.position);
-        return distance < chaseDistance;
+        private void Update()
+        {
+            if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
+            {
+                Debug.Log("Chase");
+                //fighter.Attack(player);
+            }
+
+            else
+            {
+                //fighter.Cancel();
+            }
+        }
+
+        private bool InAttackRangeOfPlayer()
+        {
+            float distance = Vector3.Distance(player.transform.position, transform.position);
+            return distance < chaseDistance;
+        }
     }
 }

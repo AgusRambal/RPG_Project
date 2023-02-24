@@ -1,6 +1,7 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using TreeEditor;
 
 namespace RPG.Combat
 {
@@ -8,35 +9,32 @@ namespace RPG.Combat
     {
         [SerializeField] private float weaponRange = 2f;
         [SerializeField] private float timeBetweenAttacks = 1f;
-        [SerializeField] private float damage = 20f;
+        [SerializeField] private float weaponDamage = 20f;
 
-        private Transform target;
+        private Health target;
 
-        //private Health enemyTarget;
-        // private Mover controller;
         private float timeSinceLastAttack = 0;
-
-        private void Awake()
-        {
-            //controller = GetComponent<Mover>();
-        }
 
         void Update()
         {
+            timeSinceLastAttack += Time.deltaTime;
+
             if (target == null)
+                return;
+
+            if (target.IsDead())
                 return;
 
             if (!GetIsInRange()) 
             {
-                GetComponent<Mover>().MoveTo(target.position);
+                GetComponent<Mover>().MoveTo(target.transform.position);
             }
 
             else
             {
                 GetComponent<Mover>().Cancel();
+                AttackBehaviour();
             }
-
-            //timeSinceLastAttack += Time.deltaTime;
 
             //MovingToTarget();
         }
@@ -74,9 +72,12 @@ namespace RPG.Combat
 
         public void AttackBehaviour()
         {
+            transform.LookAt(target.transform);
+
             if (timeSinceLastAttack > timeBetweenAttacks)
             {
-                //controller.animator.SetTrigger("Attack");
+                //GetComponent<Animator>().ResetTrigger("StopAttack");
+                GetComponent<Animator>().SetTrigger("Attack");
                 timeSinceLastAttack = 0;
                 //Trigger hit() event
             }
@@ -85,7 +86,9 @@ namespace RPG.Combat
         //Animation Event
         private void Hit()
         {
-           // enemyTarget.TakeDamage(damage);
+            if (target == null)
+                return;
+            target.TakeDamage(weaponDamage);
         }
 
         private bool GetIsInRange()
@@ -93,24 +96,26 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        public bool CanAttack(Health enemy)
+        public bool CanAttack(GameObject combatTarget)
         {
-            if (enemy == null)
+            if (combatTarget == null)
                 return false;
 
-            Health target = enemy.GetComponent<Health>();
+            Health target = combatTarget.GetComponent<Health>();
             return target != null && !target.IsDead();
         }
 
         //Raycast for clicking the enemy
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            target = combatTarget.transform;
+            target = combatTarget.GetComponent<Health>();
         }
 
         public void Cancel()
         {
+            //GetComponent<Animator>().ResetTrigger("Attack");
+            //GetComponent<Animator>().SetTrigger("StopAttack");
             target = null;
         }
     }

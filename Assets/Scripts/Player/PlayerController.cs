@@ -44,12 +44,12 @@ namespace RPG.Control
                 if (target == null)
                     continue;
 
-                //if (!CanAttack(target))
-                 //   continue;
+                if (!GetComponent<Fighter>().CanAttack(target.gameObject))
+                   continue;
 
                 if (Input.GetMouseButtonDown(1))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    GetComponent<Fighter>().Attack(target.gameObject);
                     //controller.animator.SetBool("isWalking", true);
                     //enemyTarget = target;
                 }
