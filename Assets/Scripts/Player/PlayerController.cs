@@ -38,7 +38,7 @@ namespace RPG.Control
                     continue;
 
                 if (!GetComponent<Fighter>().CanAttack(target.gameObject))
-                   continue;
+                    continue;
 
                 if (Input.GetMouseButtonDown(1))
                 {
@@ -92,7 +92,7 @@ namespace RPG.Control
         //Player facing the mouse when not moving
         private void PlayerRotation()
         {
-            if (moving)
+            if (Input.GetMouseButton(2) || moving)
                 return;
 
             Vector3 positionOnScreen = cam.WorldToViewportPoint(transform.position);

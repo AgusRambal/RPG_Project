@@ -5059,7 +5059,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4188910446911294}
-  - component: {fileID: 95487148146523854}
   - component: {fileID: 205081996212331974}
   m_Layer: 0
   m_Name: Zombie Nerd Torch
@@ -5102,26 +5101,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95487148146523854
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051029724144076}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: fdd3ad8b8c10fb94fb5dbfb9a5e2dab9, type: 3}
-  m_Controller: {fileID: 9100000, guid: 87195802ebc81e846a645f1b626b3784, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!205 &205081996212331974
 LODGroup:
   m_ObjectHideFlags: 0

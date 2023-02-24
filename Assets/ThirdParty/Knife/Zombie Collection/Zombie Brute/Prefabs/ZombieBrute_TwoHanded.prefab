@@ -334,7 +334,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4752087977132082}
-  - component: {fileID: 95081771354438692}
   - component: {fileID: 205204048527337986}
   m_Layer: 0
   m_Name: ZombieBrute_TwoHanded
@@ -374,26 +373,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95081771354438692
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086100859876670}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: aee0f02c3a13fd34aaee2a3203eb60ab, type: 3}
-  m_Controller: {fileID: 9100000, guid: 0cc2b769c728fc54fb0e9b6aa3bbb3c1, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!205 &205204048527337986
 LODGroup:
   m_ObjectHideFlags: 0

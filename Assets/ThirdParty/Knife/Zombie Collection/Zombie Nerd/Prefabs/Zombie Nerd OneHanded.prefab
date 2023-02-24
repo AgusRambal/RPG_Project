@@ -2458,7 +2458,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4937688189279852}
-  - component: {fileID: 95200581785341614}
   - component: {fileID: 205179384396768680}
   m_Layer: 0
   m_Name: Zombie Nerd OneHanded
@@ -2501,26 +2500,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95200581785341614
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662786991626834}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: fdd3ad8b8c10fb94fb5dbfb9a5e2dab9, type: 3}
-  m_Controller: {fileID: 9100000, guid: b7ec1edc5ecc7b94289f1f796f8a6b19, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!205 &205179384396768680
 LODGroup:
   m_ObjectHideFlags: 0

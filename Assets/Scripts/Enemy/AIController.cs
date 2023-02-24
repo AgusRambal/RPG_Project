@@ -18,19 +18,19 @@ namespace RPG.Combat
         }
 
         //Testear esto y ver de posicionar bien la camara en la primera
-        //SETEAR CORRECTAMENTE TODA LA PARTE DEL CONTROLLER DEL ENEMIGO
         private void Update()
         {
-            /*if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
+            if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
             {
                 Debug.Log("Chase");
-                //fighter.Attack(player);
+                fighter.Attack(player);
             }
 
             else
             {
-                //fighter.Cancel();
-            }*/
+                GetComponent<Animator>().SetBool("isWalking", false);
+                fighter.Cancel();
+            }
         }
 
         private bool InAttackRangeOfPlayer()

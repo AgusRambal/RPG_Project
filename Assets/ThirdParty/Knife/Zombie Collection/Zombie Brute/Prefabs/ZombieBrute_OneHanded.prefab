@@ -616,7 +616,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4323159327291208}
-  - component: {fileID: 95963161812131480}
   - component: {fileID: 205891562473690452}
   m_Layer: 0
   m_Name: ZombieBrute_OneHanded
@@ -656,26 +655,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95963161812131480
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317972421600666}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: aee0f02c3a13fd34aaee2a3203eb60ab, type: 3}
-  m_Controller: {fileID: 9100000, guid: 6fe5d0baad6f9c74f8788f0b4ba1ce4b, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!205 &205891562473690452
 LODGroup:
   m_ObjectHideFlags: 0

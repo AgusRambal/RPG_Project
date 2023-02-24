@@ -1,22 +1,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace RPG.Combat
 {
-    public GameObject parent;
-    public List<GameObject> listOfZombies = new List<GameObject>();
-
-    private void Start()
+    public class Enemy : MonoBehaviour
     {
-        InstantiateRandomEnemy();
-    }
+        public GameObject parent;
+        public List<GameObject> listOfZombies = new List<GameObject>();
+        public List<RuntimeAnimatorController> animator = new List<RuntimeAnimatorController>();
+        public List<Avatar> avatar = new List<Avatar>();
 
-    //Poner una carga de nivel hasta que se terminen de instanciar los zombies
-    public void InstantiateRandomEnemy()
-    {
-        var rnd = Random.Range(0, listOfZombies.Count - 1);
+        private void Start()
+        {
+            InstantiateRandomEnemy();
+        }
 
-        var instantiatedZombie = Instantiate(listOfZombies[rnd], parent.transform);
-        instantiatedZombie.transform.localPosition = Vector3.zero;
+        //Poner una carga de nivel hasta que se terminen de instanciar los zombies
+        public void InstantiateRandomEnemy()
+        {
+            var rnd = Random.Range(0, listOfZombies.Count - 1);
+
+            var instantiatedZombie = Instantiate(listOfZombies[rnd], parent.transform);
+            instantiatedZombie.transform.localPosition = Vector3.zero;
+
+            GetComponent<Animator>().runtimeAnimatorController = animator[rnd];
+            GetComponent<Animator>().avatar = avatar[rnd];
+        }
     }
 }
