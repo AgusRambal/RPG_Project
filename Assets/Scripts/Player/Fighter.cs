@@ -1,18 +1,18 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
-using TreeEditor;
 
 namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
+        [Header("Modifiers")]
         [SerializeField] private float weaponRange = 2f;
         [SerializeField] private float timeBetweenAttacks = 1f;
         [SerializeField] private float weaponDamage = 20f;
 
+        //Flags
         private Health target;
-
         private float timeSinceLastAttack = 0;
 
         void Update()
@@ -35,39 +35,6 @@ namespace RPG.Combat
                 GetComponent<Mover>().Cancel();
                 AttackBehaviour();
             }
-
-            //MovingToTarget();
-        }
-
-        public void MovingToTarget()
-        {
-           // if (enemyTarget == null)
-            //    return;
-
-          /*  if (enemyTarget.IsDead())
-            {
-                //  controller.isAttacking = true;
-                Invoke("AccessMouseControl", 2.3f);
-                // controller.StopV2();        
-                CancelCombat();
-                return;
-            }*/
-
-            /*if (!GetIsInRange())
-            {
-                 controller.Move(enemyTarget.transform.position);
-            }*/
-
-           /* else
-            {
-                controller.Stop();
-                AttackBehaviour();
-            }*/
-        }
-
-        public void AccessMouseControl()
-        {
-            // controller.SetMoving(false);
         }
 
         public void AttackBehaviour()
@@ -76,7 +43,8 @@ namespace RPG.Combat
 
             if (timeSinceLastAttack > timeBetweenAttacks)
             {
-                //GetComponent<Animator>().ResetTrigger("StopAttack");
+                GetComponent<Animator>().SetBool("isWalking", false);
+                GetComponent<Animator>().ResetTrigger("StopAttack");
                 GetComponent<Animator>().SetTrigger("Attack");
                 timeSinceLastAttack = 0;
                 //Trigger hit() event
@@ -88,9 +56,10 @@ namespace RPG.Combat
         {
             if (target == null)
                 return;
+
             target.TakeDamage(weaponDamage);
         }
-
+       
         private bool GetIsInRange()
         {
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
@@ -109,13 +78,14 @@ namespace RPG.Combat
         public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
+            GetComponent<Animator>().SetBool("isWalking", true);
             target = combatTarget.GetComponent<Health>();
         }
 
         public void Cancel()
         {
-            //GetComponent<Animator>().ResetTrigger("Attack");
-            //GetComponent<Animator>().SetTrigger("StopAttack");
+            GetComponent<Animator>().ResetTrigger("Attack");
+            GetComponent<Animator>().SetTrigger("StopAttack");
             target = null;
         }
     }

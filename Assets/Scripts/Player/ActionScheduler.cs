@@ -4,7 +4,7 @@ namespace RPG.Core
 {
     public class ActionScheduler : MonoBehaviour
     {
-
+        //Interface
         IAction currentAction;
 
         public void StartAction(IAction action)

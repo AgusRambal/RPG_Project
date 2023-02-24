@@ -4,17 +4,19 @@ namespace RPG.Core
 {
     public class CameraBehaviour : MonoBehaviour
     {
+        [Header("Modifiers")]
         [SerializeField] private Transform follow;
         [SerializeField] private float distance;
         [SerializeField] private Vector2 sensitivity;
 
+        //Flags
         private Vector2 angle = new Vector2(90 * Mathf.Deg2Rad, 0);
         private Camera cam;
         private Vector2 nearPlaneSize;
 
         private void Awake()
         {
-            cam = GetComponent<Camera>();
+            cam = Camera.main;
         }
 
         private void Start()

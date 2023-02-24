@@ -9,20 +9,13 @@ namespace RPG.Control
     {
         [Header("PlayerComponents")]
         [SerializeField] private RichAI agent;
-        public Animator animator;
+        [SerializeField] private Animator animator;
 
         [Header("Dependences")]
-        public Camera cam;
+        [SerializeField] private Camera cam;
 
-        //[HideInInspector] public bool isAttacking;
-        //private AttackScript attack;
-        private bool initialIddle;
-        private bool moving;
-
-        private void Start()
-        {
-            initialIddle = true;
-        }
+        //Flags
+        [HideInInspector] public bool moving;
 
         private void Update()
         {
@@ -50,8 +43,6 @@ namespace RPG.Control
                 if (Input.GetMouseButtonDown(1))
                 {
                     GetComponent<Fighter>().Attack(target.gameObject);
-                    //controller.animator.SetBool("isWalking", true);
-                    //enemyTarget = target;
                 }
 
                 return true;
@@ -63,7 +54,11 @@ namespace RPG.Control
         private bool InteractWithMovement()
         {
             PlayerRotation();
-            MovementActions();
+
+            if (GetComponent<Mover>().moving)
+            {
+                MovementActions();
+            }
 
             bool hasHit = Physics.Raycast(GetMouseRay(), out RaycastHit hit);
 
@@ -72,7 +67,6 @@ namespace RPG.Control
                 if (Input.GetMouseButtonDown(1))
                 {
                     GetComponent<Mover>().StartMoveAction(hit.point);
-                    initialIddle = false;
                 }
                 return true;
             }
@@ -82,22 +76,15 @@ namespace RPG.Control
 
         private void MovementActions()
         {
-            if (initialIddle)
-                return;
-
-            //if (!isAttacking)
-            // {
-            if (transform.hasChanged)
+            if (agent.destination != null)
             {
                 animator.SetBool("isWalking", true);
                 moving = true;
             }
-            // }     
 
             if (agent.reachedEndOfPath)
             {
                 animator.SetBool("isWalking", false);
-
                 moving = false;
             }
         }
@@ -110,7 +97,6 @@ namespace RPG.Control
 
             Vector3 positionOnScreen = cam.WorldToViewportPoint(transform.position);
             Vector3 mouseOnScreen = (Vector2)cam.ScreenToViewportPoint(Input.mousePosition);
-
             Vector3 direction = mouseOnScreen - positionOnScreen;
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;

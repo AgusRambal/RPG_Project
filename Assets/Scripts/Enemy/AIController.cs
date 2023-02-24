@@ -4,8 +4,10 @@ namespace RPG.Combat
 {
     public class AIController : MonoBehaviour
     {
+        [Header("Modifiers")]
         [SerializeField] private float chaseDistance = 5f;
 
+        //Flags
         private Fighter fighter;
         private GameObject player;
 
@@ -15,9 +17,10 @@ namespace RPG.Combat
             player = GameObject.FindWithTag("Player");
         }
 
+        //Testear esto y ver de posicionar bien la camara en la primera
         private void Update()
         {
-            if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
+            /*if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
             {
                 Debug.Log("Chase");
                 //fighter.Attack(player);
@@ -26,7 +29,7 @@ namespace RPG.Combat
             else
             {
                 //fighter.Cancel();
-            }
+            }*/
         }
 
         private bool InAttackRangeOfPlayer()
