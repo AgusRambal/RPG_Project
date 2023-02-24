@@ -17,7 +17,6 @@ namespace RPG.Combat
             player = GameObject.FindWithTag("Player");
         }
 
-        //Testear esto y ver de posicionar bien la camara en la primera
         private void Update()
         {
             if (InAttackRangeOfPlayer() && fighter.CanAttack(player))
