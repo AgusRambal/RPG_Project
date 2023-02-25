@@ -31,6 +31,15 @@ namespace RPG.Movement
             float speed = localVelocity.z;
 
             GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+
+            if (speed > 0.1)
+            {
+                moving = true;
+            }
+            else
+            {
+                moving = false;
+            }
         }
 
         public void StartMoveAction(Vector3 destination)

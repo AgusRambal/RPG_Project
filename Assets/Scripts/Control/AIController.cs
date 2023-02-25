@@ -87,7 +87,6 @@ namespace RPG.Combat
 
             if (timeSinceArrivedAtWaypoint > waypointDwellTime)
             {
-                //GetComponent<Animator>().SetBool("isWalking", false);
                 mover.StartMoveAction(nextPosition);
             }         
         }

@@ -16,7 +16,6 @@ namespace RPG.Control
         [SerializeField] private Camera cam;
         
         //Flags
-        [HideInInspector] public bool moving;
         private Health health;
 
         private void Start()
@@ -64,11 +63,6 @@ namespace RPG.Control
         {
             PlayerRotation();
 
-            if (GetComponent<Mover>().moving)
-            {
-                //MovementActions();
-            }
-
             bool hasHit = Physics.Raycast(GetMouseRay(), out RaycastHit hit);
 
             if (hasHit)
@@ -83,25 +77,10 @@ namespace RPG.Control
             return false;
         }
 
-      /*  private void MovementActions()
-        {
-            if (agent.destination != null)
-            {
-                animator.SetBool("isWalking", true);
-                moving = true;
-            }
-
-            if (agent.reachedEndOfPath)
-            {
-                animator.SetBool("isWalking", false);
-                moving = false;
-            }
-        }*/
-
         //Player facing the mouse when not moving
         private void PlayerRotation()
         {
-            if (Input.GetMouseButton(2) || moving)
+            if (Input.GetMouseButton(2) || GetComponent<Mover>().moving)
                 return;
 
             Vector3 positionOnScreen = cam.WorldToViewportPoint(transform.position);

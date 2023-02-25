@@ -43,7 +43,6 @@ namespace RPG.Combat
 
             if (timeSinceLastAttack > timeBetweenAttacks)
             {
-               // GetComponent<Animator>().SetBool("isWalking", false);
                 GetComponent<Animator>().ResetTrigger("StopAttack");
                 GetComponent<Animator>().SetTrigger("Attack");
                 timeSinceLastAttack = 0;
@@ -78,7 +77,6 @@ namespace RPG.Combat
         public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-           // GetComponent<Animator>().SetBool("isWalking", true);
             target = combatTarget.GetComponent<Health>();
         }
 
