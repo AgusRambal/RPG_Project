@@ -66,7 +66,7 @@ namespace RPG.Control
 
             if (GetComponent<Mover>().moving)
             {
-                MovementActions();
+                //MovementActions();
             }
 
             bool hasHit = Physics.Raycast(GetMouseRay(), out RaycastHit hit);
@@ -83,7 +83,7 @@ namespace RPG.Control
             return false;
         }
 
-        private void MovementActions()
+      /*  private void MovementActions()
         {
             if (agent.destination != null)
             {
@@ -96,7 +96,7 @@ namespace RPG.Control
                 animator.SetBool("isWalking", false);
                 moving = false;
             }
-        }
+        }*/
 
         //Player facing the mouse when not moving
         private void PlayerRotation()

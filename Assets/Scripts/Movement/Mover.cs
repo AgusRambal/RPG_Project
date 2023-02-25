@@ -21,6 +21,16 @@ namespace RPG.Movement
         private void Update()
         {
             agent.enabled = !health.IsDead();
+            UpdateAnimator();
+        }
+
+        public void UpdateAnimator()
+        {
+            Vector3 velocity = GetComponent<RichAI>().velocity;
+            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+            float speed = localVelocity.z;
+
+            GetComponent<Animator>().SetFloat("forwardSpeed", speed);
         }
 
         public void StartMoveAction(Vector3 destination)
