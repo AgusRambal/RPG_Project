@@ -6,8 +6,8 @@ namespace RPG.Core
     {
         [Header("Modifiers")]
         [SerializeField] private Transform follow;
-        [SerializeField] private float distance;
         [SerializeField] private Vector2 sensitivity;
+        private float distance;
 
         //Flags
         private Vector2 angle = new Vector2(90 * Mathf.Deg2Rad, 0);
@@ -22,6 +22,8 @@ namespace RPG.Core
         private void Start()
         {
             CalculateNearPlane();
+            cam.transform.position = new Vector3(1388, 28, 77);
+            cam.transform.rotation = new Quaternion(15,-110,0,0);
         }
 
         void Update()
