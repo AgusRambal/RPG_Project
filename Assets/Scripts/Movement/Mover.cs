@@ -1,6 +1,7 @@
 using UnityEngine;
 using Pathfinding;
 using RPG.Core;
+using Pathfinding.RVO.Sampled;
 
 namespace RPG.Movement
 {
@@ -10,8 +11,9 @@ namespace RPG.Movement
         [SerializeField] private RichAI agent;
 
         //Flags
+        private Health health;
+        [SerializeField] private float maxSpeed = 6f;
         [HideInInspector] public bool moving;
-        Health health;
 
         private void Start()
         {
@@ -42,25 +44,26 @@ namespace RPG.Movement
             }
         }
 
-        public void StartMoveAction(Vector3 destination)
+        public void StartMoveAction(Vector3 destination, float speedFraction)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            MoveTo(destination);
+            MoveTo(destination, speedFraction);
         }
 
         //Set target
-        public void MoveTo(Vector3 destination)
+        public void MoveTo(Vector3 destination, float speedFraction)
         {
-            moving = true;
-            agent.isStopped = false;
             agent.destination = destination;
+            agent.maxSpeed = maxSpeed * Mathf.Clamp01(speedFraction);
+            agent.isStopped = false;
+            moving = true;
         }
 
         //Stop movement
-         public void Cancel()
-         {
-             moving = false;
-             agent.isStopped = true;
-         }
+        public void Cancel()
+        {
+            agent.isStopped = true;
+            moving = false;
+        }
     }
 }

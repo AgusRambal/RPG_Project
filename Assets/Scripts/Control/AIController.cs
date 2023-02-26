@@ -13,6 +13,7 @@ namespace RPG.Combat
         [SerializeField] private PatrolPath patrolPath;
         [SerializeField] private float waypointTolerance = 1f;
         [SerializeField] private float waypointDwellTime = 3f;
+        [Range(0,1)][SerializeField] private float patrolSpeedFraction = 0.2f;
 
         //Scripts references cached
         private Fighter fighter;
@@ -87,7 +88,7 @@ namespace RPG.Combat
 
             if (timeSinceArrivedAtWaypoint > waypointDwellTime)
             {
-                mover.StartMoveAction(nextPosition);
+                mover.StartMoveAction(nextPosition, patrolSpeedFraction);
             }         
         }
 
