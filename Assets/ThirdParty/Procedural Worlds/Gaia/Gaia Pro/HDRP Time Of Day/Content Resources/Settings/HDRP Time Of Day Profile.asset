@@ -2291,7 +2291,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    m_advancedLightingSettings: 1
+    m_advancedLightingSettings: 0
     m_useSSGI: 1
     m_ssgiQuality: 2
     m_ssgiRenderMode: 1
