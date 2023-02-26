@@ -48,7 +48,7 @@ MonoBehaviour:
   m_drawBias: 0
   m_InDistance: 0
   m_InFadeDistance: 0.01
-  m_OutDistance: 50
+  m_OutDistance: 250
   m_OutFadeDistance: 5
   m_Zprime: 0
   m_ZprimeMaxDistance: 0.01

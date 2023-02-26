@@ -44,7 +44,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_colorRandomization: 0
-  m_disableDraw: 0
+  m_disableDraw: 1
   m_drawBias: 0
   m_InDistance: 3
   m_InFadeDistance: 5

@@ -12,23 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 11
+  version: 12
+  hdPluginSubTargetMaterialVersions:
+    m_Keys: []
+    m_Values: 
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PW_Detail_TreeCubes
-  m_Shader: {fileID: 4800000, guid: ec3e23ed50019ec4087628322790a855, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _DISABLE_SSR_TRANSPARENT _PW_SF_WIND_ON
+  m_Shader: {fileID: -6465566751694194690, guid: ccdda490f4d39b24c834f4ba53beaa0c,
+    type: 3}
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _DISABLE_SSR_TRANSPARENT
+  - _PW_FLORAHDRP_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2475
   stringTagMap:
     MotionVector: User
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - RayTracingPrepass
   - MOTIONVECTORS
@@ -146,6 +155,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - BOOLEAN_39538BE377C8401B940482B739880ACC: 0
     - Vector1_95d7235b4e28472c8b43574046d10a99: 0
@@ -171,6 +181,7 @@ Material:
     - _Billboard: 0
     - _BlendMode: 0
     - _CoatMask: 0
+    - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.1
@@ -198,6 +209,7 @@ Material:
     - _DistortionVectorBias: -1
     - _DistortionVectorScale: 2
     - _DoubleSidedEnable: 0
+    - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
     - _DstBlend: 0
     - _EmissiveColorMode: 1
@@ -242,6 +254,7 @@ Material:
     - _PW_CoverLayer0Smoothness: 0.5
     - _PW_CoverLayer0Tiling: 64
     - _PW_CoverLayer0Wrap: 0.01
+    - _PW_FLORAHDRP: 1
     - _PW_SF_COVER: 0
     - _PW_SF_WIND: 1
     - _PW_ShaderID: 0
