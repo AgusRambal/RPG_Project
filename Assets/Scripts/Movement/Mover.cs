@@ -1,7 +1,6 @@
 using UnityEngine;
 using Pathfinding;
 using RPG.Core;
-using Pathfinding.RVO.Sampled;
 
 namespace RPG.Movement
 {
@@ -53,6 +52,10 @@ namespace RPG.Movement
         //Set target
         public void MoveTo(Vector3 destination, float speedFraction)
         {
+            ////Esto no deberia ir aca pero no se porque sino no cancela el ataque al moverse
+            GetComponent<Animator>().ResetTrigger("Attack");
+            GetComponent<Animator>().SetTrigger("StopAttack");
+            //
             agent.destination = destination;
             agent.maxSpeed = maxSpeed * Mathf.Clamp01(speedFraction);
             agent.isStopped = false;
@@ -62,6 +65,7 @@ namespace RPG.Movement
         //Stop movement
         public void Cancel()
         {
+            Debug.Log("Cancele movimiento");
             agent.isStopped = true;
             moving = false;
         }

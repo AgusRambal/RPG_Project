@@ -7,12 +7,12 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [Header("Modifiers")]
-        [SerializeField] private float weaponRange = 0.1f;
+        [SerializeField] private float weaponRange = 2f;
         [SerializeField] private float timeBetweenAttacks = 1f;
         [SerializeField] private float weaponDamage = 20f;
 
         //Flags
-        private Health target;
+        public Health target;
         private float timeSinceLastAttack = Mathf.Infinity;
 
         void Update()
@@ -23,8 +23,11 @@ namespace RPG.Combat
                 return;
 
             if (target.IsDead())
+            {
+                Cancel(); //Esto no deberia ir aca pero no se porque sino no cancela el ataque al matar al enemigo
                 return;
-
+            }
+            
             if (!GetIsInRange()) 
             {
                 GetComponent<Mover>().MoveTo(target.transform.position, 1f);
@@ -85,6 +88,8 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("Attack");
             GetComponent<Animator>().SetTrigger("StopAttack");
             target = null;
+            Debug.Log("Cancele pelea");
+
         }
     }
 }
