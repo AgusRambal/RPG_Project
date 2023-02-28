@@ -22,12 +22,9 @@ namespace RPG.Combat
             if (target == null)
                 return;
 
-            if (target.IsDead())
-            {
-                Cancel(); //Esto no deberia ir aca pero no se porque sino no cancela el ataque al matar al enemigo
+            if (target.IsDead())           
                 return;
-            }
-            
+                      
             if (!GetIsInRange()) 
             {
                 GetComponent<Mover>().MoveTo(target.transform.position, 1f);
@@ -61,6 +58,15 @@ namespace RPG.Combat
 
             target.TakeDamage(weaponDamage);
         }
+
+        //Animation Event, agregar siempre este evento a la animacion de golpe final del player
+        private void CancelAttack()
+        {
+            if (target.IsDead())
+            {
+                Cancel();
+            }
+        }
        
         private bool GetIsInRange()
         {
@@ -88,8 +94,6 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("Attack");
             GetComponent<Animator>().SetTrigger("StopAttack");
             target = null;
-            Debug.Log("Cancele pelea");
-
         }
     }
 }

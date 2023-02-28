@@ -52,20 +52,23 @@ namespace RPG.Movement
         //Set target
         public void MoveTo(Vector3 destination, float speedFraction)
         {
-            ////Esto no deberia ir aca pero no se porque sino no cancela el ataque al moverse
-            GetComponent<Animator>().ResetTrigger("Attack");
-            GetComponent<Animator>().SetTrigger("StopAttack");
-            //
+            CancelAttackAnimation();
             agent.destination = destination;
             agent.maxSpeed = maxSpeed * Mathf.Clamp01(speedFraction);
             agent.isStopped = false;
             moving = true;
         }
 
+        private void CancelAttackAnimation()
+        { 
+            //Esto no deberia ir aca pero no se porque sino no cancela el ataque al moverse
+            GetComponent<Animator>().ResetTrigger("Attack");
+            GetComponent<Animator>().SetTrigger("StopAttack");
+        }
+
         //Stop movement
         public void Cancel()
         {
-            Debug.Log("Cancele movimiento");
             agent.isStopped = true;
             moving = false;
         }
