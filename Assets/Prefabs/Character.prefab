@@ -52,7 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5588369699038631723}
-  isAttacking: 0
+  maxSpeed: 6
+  moving: 0
 --- !u!114 &1992088675974600541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 0.25
   height: 2
   canMove: 1
   maxSpeed: 5
@@ -182,8 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee33a3fe3838bc84eb953da479c9cc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  isPlayer: 1
+  healthPoints: 100
 --- !u!1 &2955811530550585231
 GameObject:
   m_ObjectHideFlags: 0

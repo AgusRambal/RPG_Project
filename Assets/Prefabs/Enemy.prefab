@@ -86,12 +86,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9000000, guid: 30eef62811464304c9cffbf83a0c21cd, type: 3}
     - target: {fileID: 7320163594984630954, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: ef3d941c6c25bc74095cb0ddae5c9934, type: 2}
     - target: {fileID: 7965743094420015538, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
       propertyPath: weaponDamage
@@ -148,61 +148,3 @@ MonoBehaviour:
   waypointTolerance: 1
   waypointDwellTime: 3
   patrolSpeedFraction: 0.3
---- !u!114 &9176888359827832227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8887344674329905085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 322c7a74ec415344d9fad6af9a4eb47d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 8887344674329905085}
-  listOfZombies:
-  - {fileID: 1317972421600666, guid: 2f137b80aadf2314ba57b541eb316e3e, type: 3}
-  - {fileID: 1086100859876670, guid: 468e84490b902dc4ebf1954361482eb5, type: 3}
-  - {fileID: 1135728509634986, guid: 9b0d2b7b6fb579342af3139c84241b92, type: 3}
-  - {fileID: 1072364346286546, guid: 883207ca6e900b540af970d71672e23d, type: 3}
-  - {fileID: 1834013599500674, guid: 7e0119917a23e234fa7295512c8d3841, type: 3}
-  - {fileID: 1054712327344656, guid: 87cb0efbd53b47640955053dfeb48cd8, type: 3}
-  - {fileID: 1929783531466866, guid: 3ae8e82d2f785604f92ae8bc0d0a24d1, type: 3}
-  - {fileID: 1516706117270408, guid: 0f5016a35327f3048a6ce0d2398ed3fe, type: 3}
-  - {fileID: 1662786991626834, guid: 105475d00f2d89e4f92d7cced0e22f62, type: 3}
-  - {fileID: 1051029724144076, guid: 7d1cb4f13dd19034bb5b0da5a18095f7, type: 3}
-  - {fileID: 1351126246949816, guid: 6c2969816e6498b4bab7420adb5c31d6, type: 3}
-  - {fileID: 1383497980920032, guid: 71a185dd58fd5fc4588465ee54086937, type: 3}
-  - {fileID: 1787788461753104, guid: 3f7f572c25552c5419cdcf4bd963f01f, type: 3}
-  - {fileID: 1253897507827004, guid: f75dc1e589918a348948118924705754, type: 3}
-  animator:
-  - {fileID: 9100000, guid: 6fe5d0baad6f9c74f8788f0b4ba1ce4b, type: 2}
-  - {fileID: 9100000, guid: 0cc2b769c728fc54fb0e9b6aa3bbb3c1, type: 2}
-  - {fileID: 9100000, guid: 069eb91eab5c7c14c9743d33851f6d3f, type: 2}
-  - {fileID: 9100000, guid: 0ded57f3871b26241a6908bfe3cc36da, type: 2}
-  - {fileID: 9100000, guid: 41e3ae7681343c24d8062120a466e988, type: 2}
-  - {fileID: 9100000, guid: d8e6b33e33f838d41956d94bfc37e49a, type: 2}
-  - {fileID: 9100000, guid: d4710acc71f2d7f449c258317ed1a29e, type: 2}
-  - {fileID: 9100000, guid: 02e8aebe3211f7445a6f71d669494a54, type: 2}
-  - {fileID: 9100000, guid: b7ec1edc5ecc7b94289f1f796f8a6b19, type: 2}
-  - {fileID: 9100000, guid: 87195802ebc81e846a645f1b626b3784, type: 2}
-  - {fileID: 9100000, guid: 8ea796c71f2e8e14bb0de6e819aa2972, type: 2}
-  - {fileID: 9100000, guid: 410209a625a3a564c9416c2e84fd1267, type: 2}
-  - {fileID: 9100000, guid: 91e88c7e9f054704aa0031295c7b371b, type: 2}
-  - {fileID: 9100000, guid: 9e78be0783c46844eb28d320535907f8, type: 2}
-  avatar:
-  - {fileID: 9000000, guid: aee0f02c3a13fd34aaee2a3203eb60ab, type: 3}
-  - {fileID: 9000000, guid: aee0f02c3a13fd34aaee2a3203eb60ab, type: 3}
-  - {fileID: 9000000, guid: 06fb67f06e60fce448f1913181659883, type: 3}
-  - {fileID: 9000000, guid: 06fb67f06e60fce448f1913181659883, type: 3}
-  - {fileID: 9000000, guid: 2dda0152958e830478f5dcc8fa939fbe, type: 3}
-  - {fileID: 9000000, guid: 2dda0152958e830478f5dcc8fa939fbe, type: 3}
-  - {fileID: 9000000, guid: 393395da3075aca4ab97e900f02e2729, type: 3}
-  - {fileID: 9000000, guid: 393395da3075aca4ab97e900f02e2729, type: 3}
-  - {fileID: 9000000, guid: fdd3ad8b8c10fb94fb5dbfb9a5e2dab9, type: 3}
-  - {fileID: 9000000, guid: fdd3ad8b8c10fb94fb5dbfb9a5e2dab9, type: 3}
-  - {fileID: 9000000, guid: f9613498a0927ab4387976f0f4224ca0, type: 3}
-  - {fileID: 9000000, guid: f9613498a0927ab4387976f0f4224ca0, type: 3}
-  - {fileID: 9000000, guid: 01bfdd949cadcb54d87e5602590e2cce, type: 3}
-  - {fileID: 9000000, guid: 01bfdd949cadcb54d87e5602590e2cce, type: 3}
