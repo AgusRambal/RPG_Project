@@ -7,7 +7,7 @@ namespace RPG.Core
         [Header("Modifiers")]
         [SerializeField] private Transform follow;
         [SerializeField] private Vector2 sensitivity;
-        private float distance = 15f;
+        private float distance = 10f;
 
         //Flags
         private Vector2 angle = new Vector2(90 * Mathf.Deg2Rad, 0);

@@ -116,9 +116,9 @@ MonoBehaviour:
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   acceleration: 100
-  rotationSpeed: 200
+  rotationSpeed: 540
   slowdownTime: 1.5
-  endReachedDistance: 0.15
+  endReachedDistance: 0.1
   wallForce: 0.6
   wallDist: 0.05
   funnelSimplification: 1

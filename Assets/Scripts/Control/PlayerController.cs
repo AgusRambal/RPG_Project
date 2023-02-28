@@ -83,11 +83,13 @@ namespace RPG.Control
             if (Input.GetMouseButton(2) || GetComponent<Mover>().moving)
                 return;
 
+            transform.LookAt(Input.mousePosition);
+
             Vector3 positionOnScreen = cam.WorldToViewportPoint(transform.position);
             Vector3 mouseOnScreen = (Vector2)cam.ScreenToViewportPoint(Input.mousePosition);
             Vector3 direction = mouseOnScreen - positionOnScreen;
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, -angle, 0));
         }
 
