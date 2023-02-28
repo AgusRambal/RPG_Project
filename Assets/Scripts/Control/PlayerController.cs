@@ -12,14 +12,13 @@ namespace RPG.Control
         [SerializeField] private RichAI agent;
         [SerializeField] private Animator animator;
 
-        [Header("Dependences")]
-        [SerializeField] private Camera cam;
-        
         //Flags
         private Health health;
+        private Camera cam;
 
-        private void Start()
+        private void Awake()
         {
+            cam = Camera.main;
             health = GetComponent<Health>();
         }
 

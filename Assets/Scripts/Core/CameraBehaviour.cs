@@ -14,16 +14,10 @@ namespace RPG.Core
         private Camera cam;
         private Vector2 nearPlaneSize;
 
-        private void Awake()
-        {
-            cam = Camera.main;
-        }
-
         private void Start()
         {
+            cam = Camera.main;
             CalculateNearPlane();
-            cam.transform.position = new Vector3(1388, 28, 77);
-            cam.transform.rotation = new Quaternion(15,-110,0,0);
         }
 
         void Update()
