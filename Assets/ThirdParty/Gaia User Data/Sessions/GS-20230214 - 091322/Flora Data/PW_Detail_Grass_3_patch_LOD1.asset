@@ -44,11 +44,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_colorRandomization: 0
-  m_disableDraw: 1
+  m_disableDraw: 0
   m_drawBias: 0
-  m_InDistance: 3
+  m_InDistance: 242.9
   m_InFadeDistance: 5
-  m_OutDistance: 110
+  m_OutDistance: 359.4
   m_OutFadeDistance: 5
   m_Zprime: 0
   m_ZprimeMaxDistance: 8
