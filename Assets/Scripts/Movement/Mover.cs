@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using RPG.Core;
@@ -74,16 +77,28 @@ namespace RPG.Movement
             moving = false;
         }
 
+        [Serializable]
+        struct MoverSaveData
+        {
+            public SerializableVector3 position;
+            public SerializableVector3 rotation;
+        }
+
         public object CaptureState()
         {
-            return new SerializableVector3(transform.position);
+            MoverSaveData data = new MoverSaveData();
+            data.position = new SerializableVector3(transform.position);
+            data.rotation = new SerializableVector3(transform.eulerAngles);
+            
+            return data;
         }
 
         public void RestoreState(object state)
         {
-            SerializableVector3 position = (SerializableVector3)state;
+            MoverSaveData data = (MoverSaveData)state;
             GetComponent<RichAI>().enabled = false;
-            transform.position = position.ToVector();
+            transform.position = data.position.ToVector();
+            transform.eulerAngles = data.rotation.ToVector();
             GetComponent<RichAI>().enabled = true;
             GetComponent<RichAI>().destination = transform.position;
         }
