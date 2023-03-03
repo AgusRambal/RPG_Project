@@ -297,6 +297,8 @@ namespace com.ootii.Cameras
         /// </summary>
         protected virtual void LateUpdate()
         {
+            Debug.Log("Asd");
+           
             if (mIsAttachedToCharacterController) { return; }
 
             AnchorLateUpdate(Time.deltaTime, 1);

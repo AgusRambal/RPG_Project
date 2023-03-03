@@ -52,6 +52,8 @@ namespace com.ootii.Cameras
         /// <param name="rTiltAngle">Amount of tilting the camera needs to do to match the anchor</param>
         public override CameraTransform RigLateUpdate(float rDeltaTime, int rUpdateIndex, float rTiltAngle = 0f)
         {
+            Debug.Log("Asd");
+
             Transform lAnchorTransform = Anchor;
             if (lAnchorTransform == null) { return mRigTransform; }
 

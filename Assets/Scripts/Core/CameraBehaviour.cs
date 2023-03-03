@@ -16,25 +16,26 @@ namespace RPG.Core
         //Far or near to the player
         public void MouseZoom()
         {
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
-            {
-                GetComponent<YawPitchMotor>().mDistance--;
+            /* if (Input.GetAxis("Mouse ScrollWheel") > 0)
+             {
+                 GetComponent<YawPitchMotor>().mDistance--;
 
-                if (GetComponent<YawPitchMotor>().mDistance <= 5)
-                {
-                    GetComponent<YawPitchMotor>().mDistance = 5;
-                }
-            }
+                 if (GetComponent<YawPitchMotor>().mDistance <= 5)
+                 {
+                     GetComponent<YawPitchMotor>().mDistance = 5;
+                 }
+             }
 
-            else if (Input.GetAxis("Mouse ScrollWheel") < 0)
-            {
-                GetComponent<YawPitchMotor>().mDistance++;
+             else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+             {
+                 GetComponent<YawPitchMotor>().mDistance++;
 
-                if (GetComponent<YawPitchMotor>().mDistance >= 20)
-                {
-                    GetComponent<YawPitchMotor>().mDistance = 20;
-                }
-            }
+                 if (GetComponent<YawPitchMotor>().mDistance >= 20)
+                 {
+                     GetComponent<YawPitchMotor>().mDistance = 20;
+                 }
+             }
+         }*/
         }
     }
 }
