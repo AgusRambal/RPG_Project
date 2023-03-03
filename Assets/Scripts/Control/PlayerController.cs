@@ -1,4 +1,3 @@
-using Pathfinding;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
@@ -8,10 +7,6 @@ namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
-        [Header("PlayerComponents")]
-        [SerializeField] private RichAI agent;
-        [SerializeField] private Animator animator;
-
         //Flags
         private Health health;
         private Camera cam;

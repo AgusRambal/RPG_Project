@@ -8,7 +8,7 @@ namespace RPG.Core
         [SerializeField] private float healthPoints = 100f;
 
         //Flags
-        bool isDead = false;
+        private bool isDead = false;
 
         public bool IsDead()
         {

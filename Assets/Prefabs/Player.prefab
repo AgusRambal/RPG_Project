@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7418604079766103278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3118075658059877936}
+  m_Layer: 0
+  m_Name: TargetForCameraFollow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3118075658059877936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7418604079766103278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6298061770447791677}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6517653185981777052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69,29 +100,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7965743094420015538, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
+      propertyPath: weaponRange
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965743094420015538, guid: dac441213b4a2124ea234b21ec9a2a89,
+        type: 3}
       propertyPath: weaponDamage
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dac441213b4a2124ea234b21ec9a2a89, type: 3}
---- !u!114 &1729025638920229815 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5588369699038631723, guid: dac441213b4a2124ea234b21ec9a2a89,
-    type: 3}
-  m_PrefabInstance: {fileID: 6517653185981777052}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6298061770447791673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce11ea984e202491d9271f53021d8b89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &4604131321804828214 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7320163594984630954, guid: dac441213b4a2124ea234b21ec9a2a89,
-    type: 3}
-  m_PrefabInstance: {fileID: 6517653185981777052}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6298061770447791673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 942500017344684709, guid: dac441213b4a2124ea234b21ec9a2a89,
@@ -110,9 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73ef3d4b9fa2c4468d49e4fad941934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1729025638920229815}
-  animator: {fileID: 4604131321804828214}
-  cam: {fileID: 0}
 --- !u!4 &6298061770447791677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 942500017344684705, guid: dac441213b4a2124ea234b21ec9a2a89,
