@@ -9,7 +9,7 @@ namespace RPG.Combat
         [Header("Modifiers")]
         [SerializeField] private float timeBetweenAttacks = 1f;
         [SerializeField] private Transform handTransform = null;
-        [SerializeField] private Weapon defaulWeapon = null;
+        [SerializeField] private Weapon defaultWeapon = null;
 
         //Flags
         public Health target;
@@ -18,7 +18,7 @@ namespace RPG.Combat
 
         private void Start()
         {
-            EquipWeapon(defaulWeapon);
+            EquipWeapon(defaultWeapon);
         }
 
         void Update()

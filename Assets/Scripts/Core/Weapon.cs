@@ -1,3 +1,4 @@
+using RPG.Core;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -9,6 +10,7 @@ namespace RPG.Combat
         [SerializeField] private AnimatorOverrideController animatorOverride;
         [SerializeField] private float weaponDamage;
         [SerializeField] private float weaponRange;
+        [SerializeField] private Projectile projectile = null;
 
         public void Spawn(Transform handTransform, Animator animator)
         {
@@ -21,6 +23,17 @@ namespace RPG.Combat
             {
                 animator.runtimeAnimatorController = animatorOverride;
             }
+        }
+
+        public bool HasProjectile()
+        {
+            return projectile != null;
+        }
+
+        public void ShootProjectile(Health target)
+        {
+            Projectile projectileInstance = Instantiate(projectile, prefabToEquip.transform.GetChild(1).position, Quaternion.identity);
+            projectileInstance.SetTarget(target);
         }
 
         public float GetDamage()
