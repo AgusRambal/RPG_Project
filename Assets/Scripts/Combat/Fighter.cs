@@ -14,7 +14,7 @@ namespace RPG.Combat
         //Flags
         public Health target;
         private float timeSinceLastAttack = Mathf.Infinity;
-        private Weapon currentWeapon = null;
+        public Weapon currentWeapon = null;
 
         private void Start()
         {
@@ -62,7 +62,17 @@ namespace RPG.Combat
             if (target == null)
                 return;
 
-            target.TakeDamage(currentWeapon.GetDamage());
+            if (currentWeapon.HasProjectile())
+            {
+                currentWeapon.ShootProjectile(target);
+                Debug.Log("Asd");
+            }
+
+            else
+            {
+                target.TakeDamage(currentWeapon.GetDamage());
+                Debug.Log("Dsa");
+            }
         }
 
         //Animation Event, agregar siempre este evento a la animacion de golpe final del player
