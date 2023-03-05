@@ -34,8 +34,10 @@ namespace RPG.Combat
                 var dist = Vector3.Distance(transform.position, player.transform.position);
 
                 if (dist < 1f)
-                {
+                {                   
+                    Destroy(player.currentWeapon.gun);
                     player.EquipWeapon(weapon);
+                    player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
                     Destroy(gameObject);
                 }           
             }

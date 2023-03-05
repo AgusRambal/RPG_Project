@@ -65,17 +65,15 @@ namespace RPG.Combat
             if (currentWeapon.HasProjectile())
             {
                 currentWeapon.ShootProjectile(target);
-                Debug.Log("Asd");
             }
 
             else
             {
                 target.TakeDamage(currentWeapon.GetDamage());
-                Debug.Log("Dsa");
             }
         }
 
-        //Animation Event, agregar siempre este evento a la animacion de golpe final del player
+        //Animation Event, agregar siempre este evento al comienzo de la animacion de Hit
         private void CancelAttack()
         {
             if (target.IsDead())

@@ -19,3 +19,5 @@ MonoBehaviour:
   weaponRange: 7
   projectile: {fileID: 6074059575194888442, guid: 33527063d740e6c4585e9f9b8e6fb7ce,
     type: 3}
+  animSpeedMultiplier: 2
+  gun: {fileID: 0}
