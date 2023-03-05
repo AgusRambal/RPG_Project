@@ -1,4 +1,3 @@
-using RPG.Control;
 using UnityEngine;
 
 namespace RPG.Combat
@@ -35,7 +34,7 @@ namespace RPG.Combat
 
                 if (dist < 1f)
                 {                   
-                    Destroy(player.currentWeapon.gun);
+                    Destroy(player.gun);
                     player.EquipWeapon(weapon);
                     player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
                     Destroy(gameObject);

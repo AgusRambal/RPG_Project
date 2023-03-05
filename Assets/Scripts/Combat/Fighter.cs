@@ -15,6 +15,7 @@ namespace RPG.Combat
         public Health target;
         private float timeSinceLastAttack = Mathf.Infinity;
         public Weapon currentWeapon = null;
+        [HideInInspector] public GameObject gun;
 
         private void Start()
         {
@@ -64,7 +65,7 @@ namespace RPG.Combat
 
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.ShootProjectile(target);
+                currentWeapon.ShootProjectile(target, gun.transform.position);
             }
 
             else
@@ -109,6 +110,11 @@ namespace RPG.Combat
 
             Animator animator = GetComponent<Animator>();
             weapon.Spawn(handTransform, animator);
+
+            if (currentWeapon.HasProjectile())
+                return;
+
+            gun = handTransform.GetChild(5).gameObject;
         }
 
         public void Cancel()
