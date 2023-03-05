@@ -111,7 +111,7 @@ namespace RPG.Combat
             Animator animator = GetComponent<Animator>();
             weapon.Spawn(handTransform, animator);
 
-            if (currentWeapon.HasProjectile())
+            if (!currentWeapon.HasProjectile())
                 return;
 
             gun = handTransform.GetChild(5).gameObject;
