@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5424171245352846869}
   - component: {fileID: 4200864352673120130}
   - component: {fileID: 224928294465321608}
+  - component: {fileID: 7213963633201936990}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -160,6 +161,8 @@ MonoBehaviour:
   handTransform: {fileID: 0}
   defaultWeapon: {fileID: 11400000, guid: 43fd7db6baaa4bf449deb6428cf00824, type: 2}
   target: {fileID: 0}
+  currentWeapon: {fileID: 0}
+  gun: {fileID: 0}
 --- !u!114 &5424171245352846869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +201,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: 
+--- !u!114 &7213963633201936990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942500017344684709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f9f7a4a146030448f1f407a0b24431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLevel: 1
+  characterClass: 0

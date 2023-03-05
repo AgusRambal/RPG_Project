@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7213963633201936990, guid: dac441213b4a2124ea234b21ec9a2a89,
+        type: 3}
+      propertyPath: characterClass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7320163594984630954, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
       propertyPath: m_Avatar

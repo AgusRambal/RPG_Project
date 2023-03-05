@@ -38,7 +38,7 @@ namespace RPG.Combat
                     player.EquipWeapon(weapon);
                     player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
                     Destroy(gameObject);
-                }           
+                }
             }
         }
     }

@@ -4,17 +4,27 @@ using RPG.Core;
 public class Projectile : MonoBehaviour
 { 
     [SerializeField] private float speed = 1f;
+    [SerializeField] private bool isHoming = false;
 
     private Health target = null;
     private float damage = 0;
     private float timer;
+
+    private void Start()
+    {
+        transform.LookAt(target.transform.position + Vector3.up);
+    }
 
     private void Update()
     {
         if (target == null)
             return;
 
-        transform.LookAt(target.transform.position + Vector3.up); //Sumo 1 porque el modelo mide 2 (RichAI)
+        if (isHoming && !target.IsDead())
+        {
+            transform.LookAt(target.transform.position + Vector3.up); //Sumo 1 porque el modelo mide 2 (RichAI)
+        }
+
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         timer += Time.deltaTime;
 
@@ -33,6 +43,9 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Health>() != target) 
+            return;
+
+        if (target.IsDead())
             return;
 
         target.TakeDamage(damage);
