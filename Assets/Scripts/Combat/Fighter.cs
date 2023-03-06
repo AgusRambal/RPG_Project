@@ -2,6 +2,7 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
 using RPG.Saving;
+using RPG.Resources;
 
 namespace RPG.Combat
 {
@@ -16,7 +17,7 @@ namespace RPG.Combat
         public Health target;
         private float timeSinceLastAttack = Mathf.Infinity;
         private Weapon currentWeapon = null;
-        [HideInInspector] public GameObject gun;
+        [HideInInspector] public bool attacking = false;
 
         private void Start()
         {
@@ -33,10 +34,10 @@ namespace RPG.Combat
             if (target == null)
                 return;
 
-            if (target.IsDead())           
+            if (target.IsDead())
                 return;
-                      
-            if (!GetIsInRange()) 
+
+            if (!GetIsInRange())
             {
                 GetComponent<Mover>().MoveTo(target.transform.position, 1f);
             }
@@ -48,6 +49,18 @@ namespace RPG.Combat
             }
         }
 
+        public void EquipWeapon(Weapon weapon)
+        {            
+            currentWeapon = weapon;
+            Animator animator = GetComponent<Animator>();
+            weapon.Spawn(handTransform, animator);
+        }
+
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         public void AttackBehaviour()
         {
             transform.LookAt(target.transform);
@@ -57,6 +70,7 @@ namespace RPG.Combat
                 GetComponent<Animator>().ResetTrigger("StopAttack");
                 GetComponent<Animator>().SetTrigger("Attack");
                 timeSinceLastAttack = 0;
+                attacking = true;
                 //Trigger hit() event
             }
         }
@@ -69,7 +83,8 @@ namespace RPG.Combat
 
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.ShootProjectile(target, gun.transform.position);
+                Transform weapon = handTransform.Find("Weapon");
+                currentWeapon.ShootProjectile(target, weapon.transform.position);
             }
 
             else
@@ -84,6 +99,7 @@ namespace RPG.Combat
             if (target.IsDead())
             {
                 Cancel();
+                attacking = false;
             }
         }
        
@@ -108,19 +124,6 @@ namespace RPG.Combat
             target = combatTarget.GetComponent<Health>();
         }
 
-        public void EquipWeapon(Weapon weapon)
-        {
-            currentWeapon = weapon;
-
-            Animator animator = GetComponent<Animator>();
-            weapon.Spawn(handTransform, animator);
-
-            if (!currentWeapon.HasProjectile())
-                return;
-
-            gun = handTransform.GetChild(5).gameObject;
-        }
-
         public void Cancel()
         {
             GetComponent<Animator>().ResetTrigger("Attack");
@@ -136,7 +139,7 @@ namespace RPG.Combat
         public void RestoreState(object state)
         {
             string weaponName = (string)state;
-            Weapon weapon = Resources.Load<Weapon>(weaponName);
+            Weapon weapon = UnityEngine.Resources.Load<Weapon>(weaponName);
             EquipWeapon(weapon);
         }
     }

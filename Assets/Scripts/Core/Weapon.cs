@@ -1,9 +1,9 @@
-using RPG.Core;
+using RPG.Resources;
 using UnityEngine;
 
 namespace RPG.Combat
 {
-    [CreateAssetMenu(fileName = "Weapon", menuName = "RPG.NewWeapon", order = 0)]
+    [CreateAssetMenu(fileName = "Weapon", menuName = "RPG.NewWeapon")]
     public class Weapon : ScriptableObject
     {
         public GameObject prefabToEquip;
@@ -13,11 +13,16 @@ namespace RPG.Combat
         public Projectile projectile = null;
         public float animSpeedMultiplier = 1f;
 
+        const string weaponName = "Weapon";
+
         public void Spawn(Transform handTransform, Animator animator)
         {
+            DestroyOldWeapon(handTransform);
+
             if (prefabToEquip != null)
             {
-               Instantiate(prefabToEquip, handTransform);
+               GameObject weapon = Instantiate(prefabToEquip, handTransform);
+                weapon.name = weaponName;
             }
 
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
@@ -31,6 +36,16 @@ namespace RPG.Combat
             {
                 animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
+        }
+
+        private void DestroyOldWeapon(Transform handTransform)
+        {
+            Transform oldWeapon = handTransform.Find(weaponName);
+            if (oldWeapon == null)
+                return;
+
+            oldWeapon.name = "DESTROYING";
+            Destroy(oldWeapon.gameObject);
         }
 
         public bool HasProjectile()

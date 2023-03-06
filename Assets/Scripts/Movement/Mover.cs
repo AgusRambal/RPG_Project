@@ -3,6 +3,7 @@ using UnityEngine;
 using Pathfinding;
 using RPG.Core;
 using RPG.Saving;
+using RPG.Resources;
 
 namespace RPG.Movement
 {
@@ -14,7 +15,7 @@ namespace RPG.Movement
         //Flags
         private Health health;
         [SerializeField] private float maxSpeed = 6f;
-        [HideInInspector] public bool moving;
+        [HideInInspector] public bool moving = false;
 
         private void Start()
         {
@@ -32,13 +33,13 @@ namespace RPG.Movement
             Vector3 velocity = GetComponent<RichAI>().velocity;
             Vector3 localVelocity = transform.InverseTransformDirection(velocity);
             float speed = localVelocity.z;
-
             GetComponent<Animator>().SetFloat("forwardSpeed", speed);
 
             if (speed > 0.1)
             {
                 moving = true;
             }
+
             else
             {
                 moving = false;
@@ -58,7 +59,6 @@ namespace RPG.Movement
             agent.destination = destination;
             agent.maxSpeed = maxSpeed * Mathf.Clamp01(speedFraction);
             agent.isStopped = false;
-            moving = true;
         }
 
         private void CancelAttackAnimation()
@@ -72,7 +72,6 @@ namespace RPG.Movement
         public void Cancel()
         {
             agent.isStopped = true;
-            moving = false;
         }
 
         [Serializable]

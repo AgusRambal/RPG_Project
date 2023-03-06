@@ -7,7 +7,7 @@ namespace RPG.Combat
         [SerializeField] private Weapon weapon = null;
         [SerializeField] private Fighter player;
 
-        private bool pickUp;
+        private bool pickUp = false;
 
         private void Update()
         {
@@ -34,7 +34,6 @@ namespace RPG.Combat
 
                 if (dist < 1f)
                 {                   
-                    Destroy(player.gun);
                     player.EquipWeapon(weapon);
                     player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
                     Destroy(gameObject);

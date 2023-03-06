@@ -1,7 +1,7 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
-using RPG.Core;
+using RPG.Resources;
 
 namespace RPG.Control
 {
@@ -21,6 +21,8 @@ namespace RPG.Control
         {
             if (health.IsDead())
                 return;
+
+            PlayerRotation();
 
             if (InteractWithCombat())
                 return;
@@ -54,9 +56,7 @@ namespace RPG.Control
         }
 
         private bool InteractWithMovement()
-        {
-            PlayerRotation();
-
+        {            
             bool hasHit = Physics.Raycast(GetMouseRay(), out RaycastHit hit);
 
             if (hasHit)
@@ -74,7 +74,10 @@ namespace RPG.Control
         //Player facing the mouse when not moving
         private void PlayerRotation()
         {
-            if (Input.GetMouseButton(2) || GetComponent<Mover>().moving)
+            if (Input.GetMouseButton(2))
+                return;
+
+            if (GetComponent<Mover>().moving || GetComponent<Fighter>().attacking)
                 return;
 
             transform.LookAt(Input.mousePosition);
