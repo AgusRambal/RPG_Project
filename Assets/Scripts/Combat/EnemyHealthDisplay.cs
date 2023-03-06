@@ -18,13 +18,11 @@ namespace RPG.Combat
             if (fighter.GetTarget() == null)
             {
                 GetComponent<TMP_Text>().text = $"N/A";
+                return;
             }
 
-            else
-            {
-                Health health = fighter.GetTarget();
-                GetComponent<TMP_Text>().text = $"{health.GetPercentaje():0}%";
-            }       
+            Health health = fighter.GetTarget();
+            GetComponent<TMP_Text>().text = $"{health.GetPercentaje():0}%";
         }
     }
 }

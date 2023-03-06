@@ -84,12 +84,12 @@ namespace RPG.Combat
             if (currentWeapon.HasProjectile())
             {
                 Transform weapon = handTransform.Find("Weapon");
-                currentWeapon.ShootProjectile(target, weapon.transform.position);
+                currentWeapon.ShootProjectile(target, weapon.transform.position, gameObject);
             }
 
             else
             {
-                target.TakeDamage(currentWeapon.GetDamage());
+                target.TakeDamage(gameObject, currentWeapon.GetDamage());
             }
         }
 

@@ -53,10 +53,10 @@ namespace RPG.Combat
             return projectile != null;
         }
 
-        public void ShootProjectile(Health target, Vector3 gun)
+        public void ShootProjectile(Health target, Vector3 gun, GameObject instigator)
         {
             Projectile projectileInstance = Instantiate(projectile, gun, Quaternion.identity);
-            projectileInstance.SetTarget(target, weaponDamage);
+            projectileInstance.SetTarget(target, instigator, weaponDamage);
         }
 
         public float GetDamage()
