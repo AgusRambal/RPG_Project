@@ -15,4 +15,6 @@ MonoBehaviour:
   prefabToEquip: {fileID: 0}
   animatorOverride: {fileID: 0}
   weaponDamage: 10
-  weaponRange: 1.35
+  weaponRange: 1.1
+  projectile: {fileID: 0}
+  animSpeedMultiplier: 1
