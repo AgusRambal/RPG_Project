@@ -103,6 +103,12 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 1000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7213963633201936990, guid: dac441213b4a2124ea234b21ec9a2a89,
+        type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 729910834889596702, guid: f12d85f267de9a2448530b601e00b11e,
+        type: 3}
     - target: {fileID: 7965743094420015538, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
       propertyPath: weapon

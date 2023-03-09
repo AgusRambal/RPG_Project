@@ -17,9 +17,10 @@ namespace RPG.Movement
         [SerializeField] private float maxSpeed = 6f;
         [HideInInspector] public bool moving = false;
 
-        private void Start()
+        private void Awake()
         {
             health = GetComponent<Health>();
+            agent = GetComponent<RichAI>();
         }
 
         private void Update()
@@ -93,11 +94,11 @@ namespace RPG.Movement
         public void RestoreState(object state)
         {
             MoverSaveData data = (MoverSaveData)state;
-            GetComponent<RichAI>().enabled = false;
+            agent.enabled = false;
             transform.position = data.position.ToVector();
             transform.eulerAngles = data.rotation.ToVector();
-            GetComponent<RichAI>().enabled = true;
-            GetComponent<RichAI>().destination = transform.position;
+            agent.enabled = true;
+            agent.destination = transform.position;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace RPG.SceneManagement
     {
         const string defaultSaveFile = "save";
 
-        [SerializeField] private float fadeInTime = 0.2f;
+        [SerializeField] private float fadeInTime = 1f;
 
         private void Awake()
         {
@@ -17,10 +17,10 @@ namespace RPG.SceneManagement
 
         private IEnumerator LoadLastScene()
         { 
-            //Fader fader = FindObjectOfType<Fader>();
-            //fader.FadeOutInmediate();
             yield return GetComponent<SavingSystem>().LoadLastScene(defaultSaveFile);
-            //yield return fader.FadeIn(fadeInTime);
+            Fader fader = FindObjectOfType<Fader>();
+            fader.FadeOutInmediate();
+            yield return fader.FadeIn(fadeInTime);
         }
 
         private void Update()
