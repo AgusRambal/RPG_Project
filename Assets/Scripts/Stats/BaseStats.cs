@@ -1,3 +1,4 @@
+using RPG.Lazy;
 using System;
 using UnityEngine;
 
@@ -11,17 +12,18 @@ namespace RPG.Stats
         [SerializeField] private GameObject levelUpParticleEffect = null;
 
         public event Action onLevelUp;
+        private LazyValue<int> currentLevel;
         private Experience experience;
-        private int currentLevel = 0;
 
         private void Awake()
         {
             experience = GetComponent<Experience>();
+            currentLevel = new LazyValue<int>(CalculateLevel);
         }
 
         private void Start()
         {
-            currentLevel = CalculateLevel();        
+            currentLevel.ForceInit();        
         }
 
         private void OnEnable()
@@ -44,9 +46,9 @@ namespace RPG.Stats
         {
             int newLevel = CalculateLevel(); 
 
-            if (newLevel > currentLevel)
+            if (newLevel > currentLevel.value)
             {
-                currentLevel = newLevel;
+                currentLevel.value = newLevel;
                 LevelUpEfect();
                 onLevelUp();
             }
@@ -63,12 +65,8 @@ namespace RPG.Stats
         }
 
         public int GetLevel()
-        {
-            if (currentLevel < 1)
-            {
-                currentLevel = CalculateLevel();
-            }
-            return currentLevel;
+        {           
+            return currentLevel.value;
         }
 
         public int CalculateLevel()

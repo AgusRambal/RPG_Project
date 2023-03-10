@@ -3,6 +3,7 @@ using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
 using RPG.Resources;
+using RPG.Lazy;
 
 namespace RPG.Combat
 {
@@ -23,10 +24,10 @@ namespace RPG.Combat
         private Mover mover;
 
         //Flags
-        Vector3 guardPosition;
-        float timeSinceLastSawPlayer = Mathf.Infinity;
-        float timeSinceArrivedAtWaypoint = Mathf.Infinity;
-        int currentWaypointIndex = 0;
+        private LazyValue<Vector3> guardPosition;
+        private float timeSinceLastSawPlayer = Mathf.Infinity;
+        private float timeSinceArrivedAtWaypoint = Mathf.Infinity;
+        private int currentWaypointIndex = 0;
 
         private void Awake()
         {
@@ -34,11 +35,18 @@ namespace RPG.Combat
             health = GetComponent<Health>();
             mover = GetComponent<Mover>();
             player = GameObject.FindWithTag("Player");
+
+            guardPosition = new LazyValue<Vector3>(GetGuardPosition);
+        }
+
+        private Vector3 GetGuardPosition()
+        {
+            return transform.position;
         }
 
         private void Start()
         {
-            guardPosition = transform.position;
+            guardPosition.ForceInit();
         }
 
         private void Update()
@@ -77,7 +85,7 @@ namespace RPG.Combat
 
         private void Patrolheaviour()
         {
-            Vector3 nextPosition = guardPosition;
+            Vector3 nextPosition = guardPosition.value;
 
             if (patrolPath != null)
             {

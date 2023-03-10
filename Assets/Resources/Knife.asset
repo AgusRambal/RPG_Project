@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabToEquip: {fileID: 7660228788414529440, guid: ee4e1d4347826b542a72fd343f3f38df,
     type: 3}
   animatorOverride: {fileID: 22100000, guid: 2c1a9ac70950d844897b585098330733, type: 2}
-  weaponDamage: 20
+  weaponDamage: 25
   weaponRange: 1.1
   projectile: {fileID: 0}
   animSpeedMultiplier: 1
