@@ -1,8 +1,10 @@
+using RPG.Control;
+using RPG.Movement;
 using UnityEngine;
 
 namespace RPG.Combat
 {
-    public class WeaponPickup : MonoBehaviour
+    public class WeaponPickup : MonoBehaviour, IRaycastable
     {
         [SerializeField] private Weapon weapon = null;
         [SerializeField] private Fighter player;
@@ -18,7 +20,8 @@ namespace RPG.Combat
                 {
                     if (hit.collider.gameObject == gameObject)
                     {
-                        pickUp = true;     
+                        pickUp = true;
+                        player.GetComponent<Mover>().MoveTo(transform.position, 1f);
                     }
 
                     else
@@ -30,15 +33,30 @@ namespace RPG.Combat
 
             if (pickUp == true)
             {
-                var dist = Vector3.Distance(transform.position, player.transform.position);
-
-                if (dist < 1f)
-                {                   
-                    player.EquipWeapon(weapon);
-                    player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
-                    Destroy(gameObject);
-                }
+                Pickup(player);
             }
+        }
+
+        private void Pickup(Fighter player)
+        {
+            var dist = Vector3.Distance(transform.position, player.transform.position);
+
+            if (dist < 1f)
+            {
+                player.EquipWeapon(weapon);
+                player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
+                Destroy(gameObject);
+            }
+        }
+
+        public bool HandleRaycast(PlayerController playerController)
+        {  
+            return true;
+        }
+
+        public CursorType GetCursorType()
+        {
+            return CursorType.Pickup;
         }
     }
 }

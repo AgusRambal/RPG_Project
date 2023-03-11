@@ -2,6 +2,8 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
 using RPG.Resources;
+using System;
+using UnityEngine.EventSystems;
 
 namespace RPG.Control
 {
@@ -11,6 +13,16 @@ namespace RPG.Control
         private Health health;
         private Camera cam;
 
+        [Serializable]
+        struct CursorMapping
+        { 
+            public CursorType type;
+            public Texture2D texture;
+            public Vector2 hotspot;
+        }
+
+        [SerializeField] private CursorMapping[] cursorMapping = null;
+
         private void Awake()
         {
             cam = Camera.main;
@@ -19,34 +31,64 @@ namespace RPG.Control
 
         private void Update()
         {
-            if (health.IsDead())
+            if (InteractWithUI())
                 return;
+
+            if (health.IsDead())
+            {
+                SetCursor(CursorType.None);
+                return;
+            }
 
             PlayerRotation();
 
-            if (InteractWithCombat())
+            if (InteractWithComponent())
                 return;
             if (InteractWithMovement())
                 return;
+
+            SetCursor(CursorType.None);
         }
 
-        private bool InteractWithCombat()
+        private bool InteractWithComponent()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = RaycastAllSorted();
 
             foreach (RaycastHit hit in hits)
-            {            
-                if (!hit.transform.TryGetComponent<CombatTarget>(out var target))
-                    continue;
+            {
+                IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
 
-                if (!GetComponent<Fighter>().CanAttack(target.gameObject))
-                    continue;
-
-                if (Input.GetMouseButtonDown(1))
+                foreach (IRaycastable raycastable in raycastables)
                 {
-                    GetComponent<Fighter>().Attack(target.gameObject);
+                    if (raycastable.HandleRaycast(this))
+                    {
+                        SetCursor(raycastable.GetCursorType());
+                        return true;
+                    }
                 }
+            }
 
+            return false;
+        }
+
+        private RaycastHit[] RaycastAllSorted()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            float[] distances = new float[hits.Length];
+            for (int i = 0; i < hits.Length; i++)
+            {
+                distances[i] = hits[i].distance;
+            }
+
+            Array.Sort(distances, hits);
+            return hits;
+        }
+
+        private bool InteractWithUI()
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                SetCursor(CursorType.UI);
                 return true;
             }
 
@@ -63,10 +105,31 @@ namespace RPG.Control
                 {
                     GetComponent<Mover>().StartMoveAction(hit.point, 1f);
                 }
+
+                SetCursor(CursorType.Movement);
                 return true;
             }
 
             return false;
+        }
+
+        private void SetCursor(CursorType type)
+        {
+            CursorMapping mapping = GetCursorMapping(type);
+            Cursor.SetCursor(mapping.texture, mapping.hotspot, CursorMode.Auto);
+        }
+
+        private CursorMapping GetCursorMapping(CursorType type)
+        {
+            foreach (CursorMapping mapping in cursorMapping)
+            {
+                if (mapping.type == type)
+                {
+                    return mapping;
+                }
+            }
+
+            return cursorMapping[0];
         }
 
         //Player facing the mouse when not moving
@@ -92,5 +155,14 @@ namespace RPG.Control
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
+    }
+
+    public enum CursorType
+    {
+        None,
+        Movement,
+        Combat,
+        UI,
+        Pickup
     }
 }

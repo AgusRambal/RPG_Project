@@ -110,7 +110,13 @@ namespace RPG.Combat
         //Animation Event, agregar siempre este evento al comienzo de la animacion de Hit
         private void CancelAttack()
         {
-            if (target.IsDead())
+            if (target == null)
+            {
+                Cancel();
+                attacking = false;
+            }
+
+            else if (target.IsDead())
             {
                 Cancel();
                 attacking = false;
