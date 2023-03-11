@@ -11,6 +11,7 @@ namespace RPG.Resources
     {
         [Header("Unity Events")]
         [SerializeField] private UnityEvent<float> takeDamage;
+        [SerializeField] private UnityEvent onDie;
 
         //Flags
         private LazyValue<float> healthPoints;
@@ -49,12 +50,17 @@ namespace RPG.Resources
         public void TakeDamage(GameObject instigator, float damage)
         {
             healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
-            takeDamage.Invoke(damage);
 
             if (healthPoints.value == 0)
             {
+                onDie.Invoke();
                 Die();
                 AwardExperience(instigator);
+            }
+
+            else
+            {
+                takeDamage.Invoke(damage);
             }
         }
 

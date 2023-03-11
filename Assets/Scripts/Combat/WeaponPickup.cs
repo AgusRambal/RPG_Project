@@ -1,6 +1,7 @@
 using RPG.Control;
 using RPG.Movement;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace RPG.Combat
 {
@@ -8,8 +9,10 @@ namespace RPG.Combat
     {
         [SerializeField] private Weapon weapon = null;
         [SerializeField] private Fighter player;
+        [SerializeField] private UnityEvent takeWeapon;
 
         private bool pickUp = false;
+        private float timer;
 
         private void Update()
         {
@@ -43,10 +46,18 @@ namespace RPG.Combat
 
             if (dist < 1f)
             {
+                takeWeapon.Invoke();
                 player.EquipWeapon(weapon);
                 player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
-                Destroy(gameObject);
+                gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                Invoke("DestroyGun", 1f);
+                pickUp = false;
             }
+        }
+
+        public void DestroyGun()
+        {
+            Destroy(gameObject);
         }
 
         public bool HandleRaycast(PlayerController playerController)

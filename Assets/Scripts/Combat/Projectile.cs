@@ -1,8 +1,11 @@
 using UnityEngine;
 using RPG.Resources;
+using UnityEngine.Events;
 
 public class Projectile : MonoBehaviour
-{ 
+{
+    [SerializeField] private UnityEvent onHit;
+
     [SerializeField] private float speed = 1f;
     [SerializeField] private bool isHoming = false;
 
@@ -52,6 +55,13 @@ public class Projectile : MonoBehaviour
             return;
 
         target.TakeDamage(instigator, damage);
+        onHit.Invoke();
+        GetComponentInChildren<TrailRenderer>().enabled = false;
+        Invoke("DestroyProjectile", 0.5f);
+    }
+
+    public void DestroyProjectile()
+    {
         Destroy(gameObject);
     }
 

@@ -59,7 +59,7 @@ namespace RPG.Combat
         }
 
         public void EquipWeapon(Weapon weapon)
-        {            
+        {
             currentWeapon.value = weapon;
             AttachWeapon(weapon);
         }
