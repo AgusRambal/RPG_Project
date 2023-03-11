@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4923bc2de6110428a6c23b46a40b4b, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
-  prefabToEquip: {fileID: 5443015509145899140, guid: b212c77d1d02e0442bb9c6a95dda4c46,
+  prefabToEquip: {fileID: 128172354613176691, guid: b212c77d1d02e0442bb9c6a95dda4c46,
     type: 3}
   animatorOverride: {fileID: 22100000, guid: 1c5547dd909302b438799ab74db2137c, type: 2}
   weaponDamage: 100
@@ -20,4 +20,3 @@ MonoBehaviour:
   projectile: {fileID: 6074059575194888442, guid: b0cfaecf8c367174dbc64d7fca57fcf9,
     type: 3}
   animSpeedMultiplier: 3
-  gun: {fileID: 0}

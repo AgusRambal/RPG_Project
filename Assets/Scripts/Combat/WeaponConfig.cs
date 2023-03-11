@@ -3,26 +3,28 @@ using UnityEngine;
 
 namespace RPG.Combat
 {
-    [CreateAssetMenu(fileName = "Weapon", menuName = "RPG.NewWeapon")]
-    public class Weapon : ScriptableObject
+    [CreateAssetMenu(fileName = "WeaponConfig", menuName = "RPG.NewWeapon")]
+    public class WeaponConfig : ScriptableObject
     {
-        public GameObject prefabToEquip;
+        public Weapon prefabToEquip;
         public AnimatorOverrideController animatorOverride;
         public float weaponDamage;
         public float weaponRange;
         public Projectile projectile = null;
         public float animSpeedMultiplier = 1f;
 
-        const string weaponName = "Weapon";
+        const string weaponName = "WeaponConfig";
 
-        public void Spawn(Transform handTransform, Animator animator)
+        public Weapon Spawn(Transform handTransform, Animator animator)
         {
             DestroyOldWeapon(handTransform);
 
+            Weapon weapon = null;
+
             if (prefabToEquip != null)
             {
-               GameObject weapon = Instantiate(prefabToEquip, handTransform);
-                weapon.name = weaponName;
+                weapon = Instantiate(prefabToEquip, handTransform);
+                weapon.gameObject.name = weaponName;
             }
 
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
@@ -36,6 +38,8 @@ namespace RPG.Combat
             {
                 animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
             }
+
+            return weapon;
         }
 
         private void DestroyOldWeapon(Transform handTransform)
