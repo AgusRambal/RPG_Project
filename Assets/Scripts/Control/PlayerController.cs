@@ -13,6 +13,9 @@ namespace RPG.Control
         private Health health;
         private Camera cam;
 
+        [Header("Modifiers")]
+        [SerializeField] float raycastRadius = 1f;
+
         [Serializable]
         struct CursorMapping
         { 
@@ -73,7 +76,7 @@ namespace RPG.Control
 
         private RaycastHit[] RaycastAllSorted()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = Physics.SphereCastAll(GetMouseRay(), raycastRadius);
             float[] distances = new float[hits.Length];
             for (int i = 0; i < hits.Length; i++)
             {
