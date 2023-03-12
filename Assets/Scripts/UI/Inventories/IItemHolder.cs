@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameDevTV.Inventories;
+using RPG.Inventories;
 
-namespace GameDevTV.UI.Inventories
+namespace RPG.Inventories
 {
     /// <summary>
     /// Allows the `ItemTooltipSpawner` to display the right information.

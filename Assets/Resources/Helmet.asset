@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20eb1792e8048a46bf5c7c520a3ea3b, type: 3}
+  m_Name: Helmet
+  m_EditorClassIdentifier: 
+  itemID: 28c1a8ca-bfe5-47d7-bf2a-73a5076b35bf
+  displayName: Helmet
+  description: Normal military helmet
+  icon: {fileID: 21300000, guid: 5c3a4c103f2b45c4dacc2321e408ea7f, type: 3}
+  pickup: {fileID: 7913754042882976143, guid: 263c3a6ac2533074eb0ffe5cf00294e3, type: 3}
+  stackable: 0
+  allowedEquipLocation: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameDevTV.Core.UI.Tooltips;
 
-namespace GameDevTV.UI.Inventories
+namespace RPG.Inventories
 {
     /// <summary>
     /// To be placed on a UI slot to spawn and show the correct item tooltip.

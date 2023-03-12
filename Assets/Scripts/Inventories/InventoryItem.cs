@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameDevTV.Inventories
+namespace RPG.Inventories
 {
     /// <summary>
     /// A ScriptableObject that represents any item that can be put in an
@@ -47,7 +47,7 @@ namespace GameDevTV.Inventories
             if (itemLookupCache == null)
             {
                 itemLookupCache = new Dictionary<string, InventoryItem>();
-                var itemList = Resources.LoadAll<InventoryItem>("");
+                var itemList = UnityEngine.Resources.LoadAll<InventoryItem>("");
                 foreach (var item in itemList)
                 {
                     if (itemLookupCache.ContainsKey(item.itemID))

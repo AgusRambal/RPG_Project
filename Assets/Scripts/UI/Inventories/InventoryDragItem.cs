@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameDevTV.Core.UI.Dragging;
-using GameDevTV.Inventories;
+using RPG.Inventories;
 
-namespace GameDevTV.UI.Inventories
+namespace RPG.Inventories
 {
     /// <summary>
     /// To be placed on icons representing the item in a slot. Allows the item
