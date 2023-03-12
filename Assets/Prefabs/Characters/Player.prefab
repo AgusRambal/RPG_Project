@@ -98,10 +98,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4129600994538260315, guid: dac441213b4a2124ea234b21ec9a2a89,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4200864352673120130, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
       propertyPath: healthPoints
       value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890105412048058817, guid: dac441213b4a2124ea234b21ec9a2a89,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7213963633201936990, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
@@ -193,21 +203,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73ef3d4b9fa2c4468d49e4fad941934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycastRadius: 1
   cursorMapping:
   - type: 0
-    texture: {fileID: 2800000, guid: a12cfa0bed3bc6e45abeb0548edc5cf0, type: 3}
+    texture: {fileID: 2800000, guid: 2c560337ad0547c4da7796efbb70db43, type: 3}
     hotspot: {x: 0, y: 0}
   - type: 1
-    texture: {fileID: 2800000, guid: 6f4e4809e8544a542b6bc2b76ad1dbb5, type: 3}
+    texture: {fileID: 2800000, guid: 2b9bd9c2386d82846bc4fa043cc292f7, type: 3}
     hotspot: {x: 0, y: 0}
   - type: 2
-    texture: {fileID: 2800000, guid: 5b13183f02a823c4cb4d990c0901b1f9, type: 3}
-    hotspot: {x: 30, y: 30}
+    texture: {fileID: 2800000, guid: 1f78683e299360942944808e8047ed1f, type: 3}
+    hotspot: {x: 0, y: 0}
   - type: 3
-    texture: {fileID: 2800000, guid: a12cfa0bed3bc6e45abeb0548edc5cf0, type: 3}
+    texture: {fileID: 2800000, guid: 2c560337ad0547c4da7796efbb70db43, type: 3}
     hotspot: {x: 0, y: 0}
   - type: 4
-    texture: {fileID: 2800000, guid: 5b4dc0857ece0664bb0e278512b5baf8, type: 3}
+    texture: {fileID: 2800000, guid: 46561bc380ae43445992f29d9bea06d9, type: 3}
     hotspot: {x: 0, y: 0}
 --- !u!4 &6298061770447791677 stripped
 Transform:
