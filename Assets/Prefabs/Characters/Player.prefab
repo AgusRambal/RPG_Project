@@ -213,13 +213,13 @@ MonoBehaviour:
     hotspot: {x: 0, y: 0}
   - type: 2
     texture: {fileID: 2800000, guid: 1f78683e299360942944808e8047ed1f, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 25, y: 25}
   - type: 3
     texture: {fileID: 2800000, guid: 2c560337ad0547c4da7796efbb70db43, type: 3}
     hotspot: {x: 0, y: 0}
   - type: 4
     texture: {fileID: 2800000, guid: 46561bc380ae43445992f29d9bea06d9, type: 3}
-    hotspot: {x: 0, y: 0}
+    hotspot: {x: 25, y: 25}
 --- !u!4 &6298061770447791677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 942500017344684705, guid: dac441213b4a2124ea234b21ec9a2a89,

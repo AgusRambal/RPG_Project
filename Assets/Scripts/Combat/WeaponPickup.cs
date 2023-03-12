@@ -12,7 +12,6 @@ namespace RPG.Combat
         [SerializeField] private UnityEvent takeWeapon;
 
         private bool pickUp = false;
-        private float timer;
 
         private void Update()
         {
