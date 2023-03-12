@@ -4,6 +4,8 @@ namespace RPG.Core
 {
     public class PersistentObjectSpawner : MonoBehaviour
     {
+        [Tooltip("This prefab will only be spawned once and persisted between " +
+        "scenes.")]
         [SerializeField] private GameObject persistentObjectPrefab;
 
         static bool hasSpawned = false;
