@@ -4,6 +4,7 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Resources;
 using RPG.Lazy;
+using Unity.VisualScripting;
 
 namespace RPG.Combat
 {
@@ -20,7 +21,8 @@ namespace RPG.Combat
         private float timeSinceLastAttack = Mathf.Infinity;
         private WeaponConfig currentWeaponConfig;
         private LazyValue<Weapon> currentWeapon;
-        
+        private GameObject weaponInHands;
+
         private void Awake()
         {
             currentWeaponConfig = defaultWeapon;
@@ -79,6 +81,9 @@ namespace RPG.Combat
 
         public void AttackBehaviour()
         {
+            if (transform.GetComponentInChildren<Magazine>().ammoLeft == 0)
+                return;
+
             transform.LookAt(target.transform);
 
             if (timeSinceLastAttack > timeBetweenAttacks)
@@ -106,6 +111,7 @@ namespace RPG.Combat
             {
                 Transform weapon = handTransform.Find("WeaponConfig");
                 currentWeaponConfig.ShootProjectile(target, weapon.transform.position, gameObject);
+                transform.GetComponentInChildren<Magazine>().ResizeMagazine();
             }
 
             else

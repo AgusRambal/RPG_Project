@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8637650473955187618}
   - component: {fileID: 8750042035457701948}
+  - component: {fileID: 5183080724500201543}
   m_Layer: 0
   m_Name: EquipedPistol
   m_TagString: Untagged
@@ -46,6 +47,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82606d0d8646d34cbfc495cf9ef8e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5183080724500201543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843225543382065820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f379866391895844d8076a6bb46e69ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magazineMaxAmount: 12
+  ammoLeft: 0
+  reloadTime: 3.2
+  isOnGround: 0
 --- !u!1 &5413272270715905587
 GameObject:
   m_ObjectHideFlags: 0
