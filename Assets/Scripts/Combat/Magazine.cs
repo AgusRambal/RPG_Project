@@ -33,6 +33,7 @@ namespace RPG.Combat
                 //owner = transform.GetComponentInParent<Animator>();
                 owner.GetComponent<Animator>().ResetTrigger("Attack");
                 owner.GetComponent<Animator>().SetTrigger("Reload");
+                GetComponent<Weapon>().QueueClips();
                 Invoke("Reload", reloadTime); //Duracion de la animacion, no lo pude hacer de otra forma por el momento
             }
         }

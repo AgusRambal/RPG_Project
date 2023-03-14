@@ -81,9 +81,14 @@ namespace RPG.Combat
 
         public void AttackBehaviour()
         {
-            if (transform.GetComponentInChildren<Magazine>().ammoLeft == 0)
-                return;
+            var magazine = transform.GetComponentInChildren<Magazine>();
 
+            if (magazine != null)
+            {
+                if (magazine.ammoLeft == 0)
+                    return;
+            }
+              
             transform.LookAt(target.transform);
 
             if (timeSinceLastAttack > timeBetweenAttacks)
