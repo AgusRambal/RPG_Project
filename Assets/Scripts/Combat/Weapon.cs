@@ -1,3 +1,4 @@
+using RPG.Control;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,20 +18,24 @@ namespace RPG.Combat
 
         [HideInInspector] public bool playReload = false;
         private Queue<AudioClip> clipQueue = new Queue<AudioClip>();
-        private Fighter player;
+        private Fighter fighter;
+
+        //This is just for no playing equip sound on enemies
+        private PlayerController player;
 
         private void Awake()
         {
-            player = GetComponentInParent<Fighter>();
+            fighter = GetComponentInParent<Fighter>();
+            player = GetComponentInParent<PlayerController>();
         }
 
         private void Start()
         {
-            if (player == null)
+            if (fighter == null || player == null || pickupAudioSource == null)
                 return;
 
             pickupAudioSource.Play();
-            player.GetComponent<Animator>().SetFloat("AnimationSpeed", player.currentWeaponConfig.animSpeedMultiplier);
+            player.GetComponent<Animator>().SetFloat("AnimationSpeed", fighter.currentWeaponConfig.animSpeedMultiplier);
         }
 
         public void OnHit()

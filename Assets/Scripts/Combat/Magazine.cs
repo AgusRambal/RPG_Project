@@ -24,6 +24,8 @@ namespace RPG.Combat
 
         //Tengo que agarrar cargadores y repetir esta clase la cantidad de veces cuantos cargadores tenga en el inventario
 
+        //BUG: SI DESEQUIPO EL ARMA Y LA VUELVO A EQUIPAR, LA MISMA SE RECARGA AUTOMATICAMENTE
+
         public void ResizeMagazine()
         {
             ammoLeft --;

@@ -190,5 +190,7 @@ MonoBehaviour:
         m_CallState: 2
   reloadAudioClips: []
   reloadAudioSource: {fileID: 0}
+  pickupAudioSource: {fileID: 0}
   doesntNeedReload: 1
+  fists: 1
   playReload: 0
