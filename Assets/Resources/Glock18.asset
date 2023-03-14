@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4923bc2de6110428a6c23b46a40b4b, type: 3}
+  m_Name: Glock18
+  m_EditorClassIdentifier: 
+  itemID: 8476b6f9-e85c-4060-9ac3-890a28e722d8
+  displayName: Glock 18
+  description: 
+  icon: {fileID: 21300000, guid: ec57d4c017cad7540b1d54f37b933f35, type: 3}
+  pickup: {fileID: 1383749480117712832, guid: 13856081603f2d04d91af905813a4362, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
+  prefabToEquip: {fileID: 8750042035457701948, guid: 10bb6858c186656479af8a4840fd3a29,
+    type: 3}
+  animatorOverride: {fileID: 22100000, guid: 3f2220b91c4080d44b4b0ce0bcbd0158, type: 2}
+  weaponDamage: 50
+  weaponRange: 10
+  projectile: {fileID: 6074059575194888442, guid: 33527063d740e6c4585e9f9b8e6fb7ce,
+    type: 3}
+  animSpeedMultiplier: 2

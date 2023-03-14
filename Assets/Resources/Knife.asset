@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4923bc2de6110428a6c23b46a40b4b, type: 3}
   m_Name: Knife
   m_EditorClassIdentifier: 
+  itemID: 6fc56741-cc18-49b8-b9a2-504e6d02b45a
+  displayName: Knife
+  description: 
+  icon: {fileID: 21300000, guid: 93720f195258c884fa3657d25f500e13, type: 3}
+  pickup: {fileID: 1383749480117712832, guid: 8d04f4fa0d95fa449ad90da1a51980e7, type: 3}
+  stackable: 0
+  allowedEquipLocation: 5
   prefabToEquip: {fileID: 8325322359183669401, guid: ee4e1d4347826b542a72fd343f3f38df,
     type: 3}
   animatorOverride: {fileID: 22100000, guid: 2c1a9ac70950d844897b585098330733, type: 2}

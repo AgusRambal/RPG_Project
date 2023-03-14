@@ -4,7 +4,7 @@ using RPG.Core;
 using RPG.Saving;
 using RPG.Resources;
 using RPG.Lazy;
-using Unity.VisualScripting;
+using RPG.Inventories;
 
 namespace RPG.Combat
 {
@@ -17,9 +17,11 @@ namespace RPG.Combat
 
         //Flags
         [HideInInspector] public bool attacking = false;
+        [HideInInspector] public bool weaponEquiped = false;
         public Health target;
+        private Equipment equipment;
         private float timeSinceLastAttack = Mathf.Infinity;
-        private WeaponConfig currentWeaponConfig;
+        public WeaponConfig currentWeaponConfig;
         private LazyValue<Weapon> currentWeapon;
         private GameObject weaponInHands;
 
@@ -27,6 +29,12 @@ namespace RPG.Combat
         {
             currentWeaponConfig = defaultWeapon;
             currentWeapon = new LazyValue<Weapon>(SetupDeafultWeapon);
+            equipment = GetComponent<Equipment>();
+
+            if (equipment)
+            {
+                equipment.equipmentUpdated += UpdateWeapon;
+            }
         }
 
         private Weapon SetupDeafultWeapon()
@@ -65,6 +73,22 @@ namespace RPG.Combat
         {
             currentWeaponConfig = weapon;
             currentWeapon.value = AttachWeapon(weapon);
+        }
+
+        private void UpdateWeapon()
+        {
+            var weapon = equipment.GetItemInSlot(EquipLocation.Weapon) as WeaponConfig;
+
+            if (weapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }
+
+            else
+            {
+                weaponEquiped = true;
+                EquipWeapon(weapon);
+            }
         }
 
         private Weapon AttachWeapon(WeaponConfig weapon)

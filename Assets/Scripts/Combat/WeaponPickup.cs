@@ -1,21 +1,34 @@
-using RPG.Control;
 using RPG.Movement;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace RPG.Combat
 {
-    public class WeaponPickup : MonoBehaviour, IRaycastable
+    public class WeaponPickup : MonoBehaviour
     {
+        [Header("Configs")]
         [SerializeField] private WeaponConfig weapon = null;
-        [SerializeField] private Fighter player;
         [SerializeField] private UnityEvent takeWeapon;
 
-        private bool pickUp = false;
+        //Flags
+        public Fighter player;
+        public bool pickUp = false;
+        public float dist;
+        private void Awake()
+        {
+           // player = GameObject.FindWithTag("Player").GetComponent<Fighter>();
+        }
+
+        private void Start()
+        {
+           /* takeWeapon.Invoke();
+            player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
+            player.weaponEquiped = false;*/
+        }
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(1))
+           /* if (Input.GetMouseButtonDown(1))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hit))
@@ -36,37 +49,19 @@ namespace RPG.Combat
             if (pickUp == true)
             {
                 Pickup(player);
-            }
+            }*/
         }
 
         private void Pickup(Fighter player)
         {
-            var dist = Vector3.Distance(transform.position, player.transform.position);
+           /*  dist = Vector3.Distance(transform.position, player.transform.position);
 
             if (dist < 1f)
             {
                 takeWeapon.Invoke();
-                player.EquipWeapon(weapon);
-                player.GetComponent<Animator>().SetFloat("AnimationSpeed", weapon.animSpeedMultiplier);
-                gameObject.transform.GetChild(0).gameObject.SetActive(false);
-                Invoke("DestroyGun", 1f);
-                pickUp = false;
-            }
-        }
+                Debug.Log("Asasdadsdsad");
 
-        public void DestroyGun()
-        {
-            Destroy(gameObject);
-        }
-
-        public bool HandleRaycast(PlayerController playerController)
-        {  
-            return true;
-        }
-
-        public CursorType GetCursorType()
-        {
-            return CursorType.Pickup;
+            }*/
         }
     }
 }

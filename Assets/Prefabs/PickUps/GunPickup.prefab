@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 3625037824567529396}
   - component: {fileID: 250377737564550816}
   - component: {fileID: 8902640578782272558}
+  - component: {fileID: 2184139428697405640}
+  - component: {fileID: 4142112810792481862}
   m_Layer: 0
   m_Name: GunPickup
   m_TagString: Untagged
@@ -92,7 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 94769307be2e8ca448514b53f6845014, type: 2}
-  player: {fileID: 0}
   takeWeapon:
     m_PersistentCalls:
       m_Calls:
@@ -108,6 +109,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  inHands: 0
+--- !u!114 &2184139428697405640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541039864326216751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f208ba0dbe65d478b628ca24b59c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4142112810792481862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541039864326216751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3655d6b0b34f6e84cbe9e93ae4536a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6692469629952165324
 GameObject:
   m_ObjectHideFlags: 0
