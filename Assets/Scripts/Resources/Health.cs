@@ -76,6 +76,7 @@ namespace RPG.Resources
 
             isDead = true;
             GetComponent<Animator>().SetTrigger("Die");
+            GetComponent<BoxCollider>().enabled = false;
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 

@@ -9,12 +9,14 @@ namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        [Header("Modifiers")]
+        [SerializeField] float raycastRadius = 1f;
+        public AudioSource pickUpSound;
+
         //Flags
         private Health health;
         private Camera cam;
-
-        [Header("Modifiers")]
-        [SerializeField] float raycastRadius = 1f;
+        [HideInInspector] public bool pickingItem;
 
         [Serializable]
         struct CursorMapping
@@ -141,7 +143,7 @@ namespace RPG.Control
             if (Input.GetMouseButton(2))
                 return;
 
-            if (GetComponent<Mover>().moving || GetComponent<Fighter>().attacking)
+            if (GetComponent<Mover>().moving || GetComponent<Fighter>().attacking || pickingItem)
                 return;
 
             transform.LookAt(Input.mousePosition);

@@ -32,7 +32,6 @@ namespace RPG.Combat
 
             if (ammoLeft == 0)
             {
-                //owner = transform.GetComponentInParent<Animator>();
                 owner.GetComponent<Animator>().ResetTrigger("Attack");
                 owner.GetComponent<Animator>().SetTrigger("Reload");
                 GetComponent<Weapon>().QueueClips();

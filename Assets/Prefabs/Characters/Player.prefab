@@ -108,6 +108,11 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 1000000
       objectReference: {fileID: 0}
+    - target: {fileID: 4331059368999326687, guid: dac441213b4a2124ea234b21ec9a2a89,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8279414b919767341b27e409aa5f2653, type: 3}
     - target: {fileID: 5890105412048058817, guid: dac441213b4a2124ea234b21ec9a2a89,
         type: 3}
       propertyPath: m_RootOrder
@@ -229,6 +234,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastRadius: 1
+  pickUpSound: {fileID: 7379245326054856515}
+  pickingItem: 0
   cursorMapping:
   - type: 0
     texture: {fileID: 2800000, guid: 2c560337ad0547c4da7796efbb70db43, type: 3}
@@ -270,9 +277,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scatterDistance: 2
+  dropLibrary: []
+  numberOfDrops: 2
 --- !u!4 &6298061770447791677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 942500017344684705, guid: dac441213b4a2124ea234b21ec9a2a89,
+    type: 3}
+  m_PrefabInstance: {fileID: 6517653185981777052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &7379245326054856515 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4331059368999326687, guid: dac441213b4a2124ea234b21ec9a2a89,
     type: 3}
   m_PrefabInstance: {fileID: 6517653185981777052}
   m_PrefabAsset: {fileID: 0}

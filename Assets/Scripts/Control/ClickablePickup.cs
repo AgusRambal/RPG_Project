@@ -7,6 +7,8 @@ namespace RPG.Control
     [RequireComponent(typeof(Pickup))]
     public class ClickablePickup : MonoBehaviour, IRaycastable
     {
+        private float pickupAnimTime = 2.3f;
+
         private PlayerController player;
         private Pickup pickup;
         private bool pickUp = false;
@@ -27,6 +29,7 @@ namespace RPG.Control
                     if (hit.collider.gameObject == gameObject)
                     {
                         pickUp = true;
+                        player.pickingItem = true;
                         player.GetComponent<Mover>().MoveTo(transform.position, 1f);
                     }
 
@@ -37,7 +40,17 @@ namespace RPG.Control
                 }
             }
 
-            if (pickUp == true)
+            if (pickUp)
+            {
+                var dist = Vector3.Distance(transform.position, player.transform.position);
+
+                if (dist < 1.3f)
+                {
+                    player.GetComponent<Mover>().MoveTo(player.transform.position, 1f);
+                }
+            }
+
+            if (pickUp)
             {
                 PickupItem();
             }
@@ -47,12 +60,19 @@ namespace RPG.Control
         {
             var dist = Vector3.Distance(transform.position, player.transform.position);
 
-            if (dist < 1f)
+            if (dist < 1.3f)
             {
-                //player.EquipWeapon(weapon);
-                pickup.PickupItem();
+                player.GetComponent<Animator>().SetTrigger("Pickup");
+                player.pickUpSound.Play();
+                Invoke("RealPickup", pickupAnimTime);
                 pickUp = false;
             }
+        }
+
+        public void RealPickup()
+        {
+            pickup.PickupItem();
+            player.pickingItem = false;
         }
 
         public CursorType GetCursorType()
