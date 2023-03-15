@@ -45,6 +45,7 @@ namespace RPG.Inventories
         {
             var spawnedPickup = item.SpawnPickup(transform.position, number);
             spawnedPickup.transform.SetParent(transform);
+            spawnedPickup.transform.localEulerAngles = Vector3.zero;
         }
 
         private void DestroyPickup()

@@ -40,6 +40,7 @@ namespace RPG.Inventories
         /// Add an item to the given equip location. Do not attempt to equip to
         /// an incompatible slot.
         /// </summary>
+        /// 
         public void AddItem(EquipLocation slot, EquipableItem item)
         {
             Debug.Assert(item.GetAllowedEquipLocation() == slot);

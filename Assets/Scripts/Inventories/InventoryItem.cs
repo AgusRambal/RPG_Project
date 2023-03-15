@@ -74,7 +74,6 @@ namespace RPG.Inventories
         {
             var pickup = Instantiate(this.pickup);
             pickup.transform.position = position;
-            pickup.transform.rotation = Quaternion.identity;
             pickup.Setup(this, number);
             return pickup;
         }

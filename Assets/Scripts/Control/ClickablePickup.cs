@@ -44,7 +44,7 @@ namespace RPG.Control
             {
                 var dist = Vector3.Distance(transform.position, player.transform.position);
 
-                if (dist < 1.3f)
+                if (dist < 1f)
                 {
                     player.GetComponent<Mover>().MoveTo(player.transform.position, 1f);
                 }
@@ -60,10 +60,9 @@ namespace RPG.Control
         {
             var dist = Vector3.Distance(transform.position, player.transform.position);
 
-            if (dist < 1.3f)
+            if (dist < 1f)
             {
                 player.GetComponent<Animator>().SetTrigger("Pickup");
-                player.pickUpSound.Play();
                 Invoke("RealPickup", pickupAnimTime);
                 pickUp = false;
             }
@@ -71,6 +70,7 @@ namespace RPG.Control
 
         public void RealPickup()
         {
+            player.pickUpSound.Play();
             pickup.PickupItem();
             player.pickingItem = false;
         }
